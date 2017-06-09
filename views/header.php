@@ -64,6 +64,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jueces <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                           <li><a href="<?php echo URL; ?>juez/agregarJuez">Agregar Juez</a></li>
+                          <li><a href="<?php echo URL; ?>juez/verJuez">Ver Juez</a></li>
                           <?php if (Session::get('tipoUsuario') < 2){ ?>
                           <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarSeccionesEstudiantes">Cargar Secciones Estudiantes</a></li>
                           <?php }  ?>
