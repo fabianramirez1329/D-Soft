@@ -8,11 +8,17 @@ class Juez extends Controllers {
         $this->view->render('header');
         $this->view->render('juez/agregarJuez');
         $this->view->render('footer');
+        
     }
     
       function guardarJuez(){
-        echo 'Guardando Datos..';
-        echo '<br>Nombre: '.$_POST['tf_name'].'</br>';
+        $datos = array();
+        /*echo 'Guardando Datos..';
+        echo '<br>Nombre: '.$_POST['tf_name'].'</br>';*/
+        $datos['tf_name'] = $_POST['tf_name'];
+        $datos['tf_id'] = $_POST['tf_id'];
+        $datos['tf_email'] = $_POST['tf_email'];
+        $this->model->guardarJuez($datos);
     }
     
     function run(){
