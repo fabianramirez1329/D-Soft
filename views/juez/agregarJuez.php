@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <label for="tf_name" class="col-xs-2 control-label">Nombre:</label>
                     <div class="col-xs-3">
-                        <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_name" name="tf_name"/>
+                        <input type="text" class="form-control input-sm validate[required]"  id="tf_name" name="tf_name"/>
                     </div>
                     <br></br>
                     <label for="tf_id" class="col-xs-2 control-label">Cédula:</label>
@@ -20,7 +20,7 @@
                     <br></br>
                     <label for="tf_email" class="col-xs-2 control-label">Correo:</label>
                     <div class="col-xs-3">
-                        <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_email" name="tf_email"/>
+                        <input type="text" class="form-control input-sm validate[required]"  id="tf_email" name="tf_email"/>
                     </div> 
                 </div> 
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->

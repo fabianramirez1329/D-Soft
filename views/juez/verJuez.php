@@ -25,20 +25,22 @@
             echo $value['cedula'];
             echo '</td>';
             echo '<td>';
-            echo $value['apellido1'];
+            echo $value['nombre'];
             echo '</td>';
             echo '<td>';
-            echo $value['apellido2'];
+            echo $value['correo'];
             echo '</td>';
-            echo '<td>';
-            echo '<a class="btn-sm btn-primary" href="editarPreatricula/' . $value['cedula'] . '">Editar</a>';
+            echo '<td class = "text-center">';
+            echo '<a class="btn-sm btn-primary" href="editarJuez/' . $value['cedula'] . '">Editar</a> &nbsp&nbsp&nbsp';
+            echo '<a class="btn-sm btn-warning" href="deshabilitarJuez/' . $value['cedula'] . '">Deshabilitar</a>';
             echo '</td>';
             echo '</tr>';
             $con++;
+            
         }
         ?>
         <tr>
-            <td colspan='6' class="lineaFin"></td>
+            <td colspan='6' class="lineaFin"></td
         </tr>
         <tr>
             <td colspan='6'>Última línea</td>
