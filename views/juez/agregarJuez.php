@@ -5,7 +5,7 @@
 <div class="row">
     <form id="MyForm" action="<?php echo URL; ?>juez/guardarJuez" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-            <legend class="text-center">DATOS DEL Juez</legend>
+            <legend class="text-center">Datos del Juez</legend>
                 <!--L2 Nombre Estudiante (Formulario Hugo)-->
                 <div class="form-group">
                     <label for="tf_name" class="col-xs-2 control-label">Nombre:</label>

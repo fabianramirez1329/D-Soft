@@ -6,21 +6,22 @@ Class Juez_Model extends Models {
         parent::__construct();
     }
 
-    public function guardarJuez($datos) {
+    public function guardarPregunta($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
-                . "WHERE cedula = '" . $datos['tf_id'] . "' ");
+        $consultaExistenciaPregunta = $this->db->select("SELECT * FROM preguntas "
+                . "WHERE id = '" . $datos['tf_id'] . "' ");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaPregunta != null) {
             //Si ya existe, realizare un update
-            echo 'Error ya existe un usuario con ese mismo nombre';
+            echo 'Error ya existe una misma pregunta con este id';
             die;
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             $this->db->insert('persona', array(
-                'cedula' => $datos['tf_id'],
-                'nombre' => $datos['tf_name'],
-                'correo' => $datos['tf_email']));
+                'id' => $datos['tf_id'],
+                'descripcion' => $datos['tf_name'],
+                'categoria' => $datos['tf_email']));
+                'valorPregunta' => $datos['tf_email']));
         }
     }
 

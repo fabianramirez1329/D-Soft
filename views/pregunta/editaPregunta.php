@@ -9,6 +9,7 @@
             <legend class="text-center">DATOS DEL ESTUDIANTE</legend>
  
             <!--L2 Nombre Estudiante (Formulario Hugo)-->
+            
             <div class="form-group">
                 <label for="tf_name" class="col-xs-2 control-label">Nombre:</label>
                 <div class="col-xs-2">

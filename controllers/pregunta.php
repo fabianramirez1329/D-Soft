@@ -6,14 +6,14 @@ class Juez extends Controllers {
         parent::__construct();
     }
 
-    function agregarJuez() {
+    function agregarPregunta() {
         $this->view->title = 'Iniciar sesión';
         $this->view->render('header');
         $this->view->render('juez/agregarJuez');
         $this->view->render('footer');
     }
 
-    function verJuez() {
+    function verPregunta() {
         $this->view->title = 'Vista de Jueces';
         $this->view->render('header');
         $this->view->ListaJueces = $this->model->ListaJueces();
@@ -21,7 +21,7 @@ class Juez extends Controllers {
         $this->view->render('footer');
     }
 
-    function guardarJuez() {
+    function guardarPregunta() {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
@@ -32,7 +32,7 @@ class Juez extends Controllers {
         
         header("Location:" . URL . "juez/verJuez");
     }
-        function actualizarJuez() {
+        function actualizarPregunta() {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
@@ -44,14 +44,14 @@ class Juez extends Controllers {
         header("Location:" . URL . "juez/verJuez");
     }
 
-    function editarJuez($id) {
+    function editarPregunta($id) {
         $this->view->title = 'Datos';
         $this->view->render('header');
         $this->view->DatosJuez = $this->model->DatosJuez($id);
         $this->view->render('juez/editarJuez');
         $this->view->render('footer');
     }
-        function eliminarJuez($id) {
+        function eliminarPregunta($id) {
             
             
         $this->view->title = 'Datos'; 
@@ -59,13 +59,7 @@ class Juez extends Controllers {
         header("Location: " . URL . "juez/verJuez"); 
 }
 
-            
-            
-            
-            
-   
 
- 
     function run() {
         //llama a la funcion run() de login_model
         $this->model->run();
