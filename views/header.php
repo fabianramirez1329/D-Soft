@@ -72,14 +72,14 @@
                       </li>
                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Estudiantes <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyectos <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>persona/listaEstudiantes">Lista Estudiante</a></li>
-                          <li class="divider"></li>
+                          <li><a href="<?php echo URL; ?>proyecto/agregarProyecto">Agregar Proyecto</a></li>
                           <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>persona/datosEstudiantes">Datos Generales Estudiantes</a></li>
-                          <li><a href="<?php echo URL; ?>persona/nuevoIngresoTardio">Nuevo Ingreso</a></li>
-                          <li><a href="<?php echo URL; ?>persona/expedientesEstudiantes">Expedientes de Estudiantes</a></li>
+                          <li><a href="<?php echo URL; ?>proyecto/editarProyecto">Editar Proyecto</a></li>
+                          <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyecto</a></li>
+                          <li class="divider"></li>
+                          <li><a href="<?php echo URL; ?>proyecto/expedientesEstudiantes">Expedientes de Estudiantes</a></li>
                           <li class="divider"></li>
                           <?php } if (Session::get('tipoUsuario') <= 3){ ?>
                           <li><a href="<?php echo URL; ?>persona/ingresarBeca">Ingresar beca transporte de Estudiantes</a></li>
