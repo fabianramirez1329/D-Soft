@@ -1,4 +1,4 @@
-div<?php
+<?php
 //print_r($this->especialidadEstudiante);
 //die;
 ?>
@@ -8,7 +8,7 @@ div<?php
             <legend class="text-center">Datos del Proyecto</legend>
                 <!--L2 Nombre Estudiante (Formulario Hugo)-->
                 <div class="form-group">
-                    <label for="tf_name" class="col-xs-2 control-label">Nombre:</label>
+                    <label for="tf_name" class="col-xs-2 control-label">Nombre del Proyecto:</label>
                     <div class="col-xs-3">
                         <input type="text" class="form-control input-sm validate[required]"  id="tf_name" name="tf_name"/>
                     </div>
@@ -31,7 +31,7 @@ div<?php
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 
                 <div class="col-xs-12 text-center">
-                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar e Imprimir" />
+                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar" />
                 </div>
             </div>
         </fieldset>

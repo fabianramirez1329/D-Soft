@@ -66,7 +66,6 @@
                           <li><a href="<?php echo URL; ?>juez/agregarJuez">Agregar Juez</a></li>
                           <li><a href="<?php echo URL; ?>juez/verJuez">Ver Juez</a></li>
                           <?php if (Session::get('tipoUsuario') < 2){ ?>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarSeccionesEstudiantes">Cargar Secciones Estudiantes</a></li>
                           <?php }  ?>
                         </ul>
                       </li>
@@ -76,17 +75,8 @@
                         <ul class="dropdown-menu" role="menu">
                           <li><a href="<?php echo URL; ?>proyecto/agregarProyecto">Agregar Proyecto</a></li>
                           <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>proyecto/editarProyecto">Editar Proyecto</a></li>
                           <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyecto</a></li>
-                          <li class="divider"></li>
-                          <li><a href="<?php echo URL; ?>proyecto/expedientesEstudiantes">Expedientes de Estudiantes</a></li>
-                          <li class="divider"></li>
                           <?php } if (Session::get('tipoUsuario') <= 3){ ?>
-                          <li><a href="<?php echo URL; ?>persona/ingresarBeca">Ingresar beca transporte de Estudiantes</a></li>
-                          <li><a href="<?php echo URL; ?>persona/listaBecas">Lista becas transporte de Estudiantes</a></li>
-                          <li class="divider"></li>
-                          <li><a href="<?php echo URL; ?>persona/ingresarBecaComedor">Ingresar beca comedor de Estudiantes</a></li>
-                          <li><a href="<?php echo URL; ?>persona/listaBecasComedor">Lista becas comedor de Estudiantes</a></li>
                           <?php }?>
                         </ul>
                       </li>

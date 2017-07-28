@@ -9,7 +9,7 @@ Class Proyecto_Model extends Models {
     public function guardarProyecto($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaProyecto = $this->db->select("SELECT * FROM proyecto "
-                . "WHERE cedula = '" . $datos['tf_id'] . "' ");
+                . "WHERE nombre = '" . $datos['tf_name'] . "' ");
 
         if ($consultaExistenciaProyecto != null) {
             //Si ya existe, realizare un update
@@ -17,14 +17,15 @@ Class Proyecto_Model extends Models {
             die;
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
-            $this->db->insert('persona', array(
-                'cedula' => $datos['tf_id'],
+            $this->db->insert('proyecto', array(
                 'nombre' => $datos['tf_name'],
-                'correo' => $datos['tf_email']));
+                'descripcion' => $datos['tf_descripcion'],
+                'integrantes' => $datos['tf_integrantes'],
+                'categoria' => $datos['tf_categoria']));
         }
     }
 
-    public function ListaJueces() {
+    public function ListaProyecto() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaListaProyecto = $this->db->select("SELECT * FROM proyecto ");
         return $consultaListaProyecto;
@@ -33,7 +34,7 @@ Class Proyecto_Model extends Models {
     public function DatosProyecto($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaProyecto = $this->db->select("SELECT * FROM proyecto "
-                . "WHERE cedula = '" . $id . "' ");
+                . "WHERE id = '" . $id . "' ");
 
         if ($consultaExistenciaProyecto != null) {
             //Si ya existe, realizare un update
@@ -47,16 +48,17 @@ Class Proyecto_Model extends Models {
     public function actualizarProyecto($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaProyecto = $this->db->select("SELECT * FROM proyecto "
-                . "WHERE cedula = '" . $datos['tf_id'] . "' ");
+                . "WHERE nombre = '" . $datos['tf_name'] . "' ");
 
         if ($consultaExistenciaProyecto != null) {
             //Si ya existe, realizare un update
             $posData = array(
-                'cedula' => $datos['tf_id'],
                 'nombre' => $datos['tf_name'],
-                'correo' => $datos['tf_email']);
+                'descripcion' => $datos['tf_descripcion'],
+                'integrantes' => $datos['tf_integrantes'],
+                'categoria' => $datos['tf_categoria']);
 
-            $this->db->update('persona', $posData, "`cedula` = '{$datos['tf_id']}'");
+            $this->db->update('proyecto', $posData, "`id` = '{$datos['tf_id']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Usuario no Encontrado';
@@ -66,10 +68,10 @@ Class Proyecto_Model extends Models {
 
     public function eliminarProyecto($id) {
         $consultaExistenciaProyecto = $this->db->select("SELECT * FROM proyecto "
-                . "WHERE cedula = '" . $id . "'");
+                . "WHERE nombre = '" . $id . "'");
 
         if ($consultaExistenciaProyecto != null) {
-            $this->db->delete('persona', "cedula = '" . $id . "'");
+            $this->db->delete('proyecto', "nombre = '" . $id . "'");
         } else {
             echo '<h1>No se encontro persona en la BD</h1>';
             die;
