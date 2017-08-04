@@ -16,7 +16,7 @@ class Proyecto extends Controllers {
     function verProyecto() {
         $this->view->title = 'Vista de Proyectos';
         $this->view->render('header');
-        $this->view->ListaJueces = $this->model->ListaProyecto();
+        $this->view->ListaProyecto = $this->model->ListaProyecto();
         $this->view->render('proyecto/verProyecto');
         $this->view->render('footer');
     }

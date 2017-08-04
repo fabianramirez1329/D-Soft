@@ -13,7 +13,7 @@
                 <label for="tf_id" class="col-xs-2 control-label">ID:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm"  id="tf_id" name="tf_id" value="<?php echo $this->DatosProyecto[0]['id']; ?>" disabled=" "/>
-                    <input type="hidden"   id="tf_id" name="tf_id" value='<?php echo $this->DatosJuez[0]['id']; ?>'/>
+                    <input type="hidden"   id="tf_id" name="tf_id" value='<?php echo $this->DatosProyecto[0]['id']; ?>'/>
                    
                 </div>
                 <br></br>

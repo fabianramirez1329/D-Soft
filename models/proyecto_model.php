@@ -48,7 +48,7 @@ Class Proyecto_Model extends Models {
     public function actualizarProyecto($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaProyecto = $this->db->select("SELECT * FROM proyecto "
-                . "WHERE nombre = '" . $datos['tf_name'] . "' ");
+                . "WHERE id = '" . $datos['tf_id'] . "' ");
 
         if ($consultaExistenciaProyecto != null) {
             //Si ya existe, realizare un update
@@ -68,10 +68,10 @@ Class Proyecto_Model extends Models {
 
     public function eliminarProyecto($id) {
         $consultaExistenciaProyecto = $this->db->select("SELECT * FROM proyecto "
-                . "WHERE nombre = '" . $id . "'");
+                . "WHERE id = '" . $id . "'");
 
         if ($consultaExistenciaProyecto != null) {
-            $this->db->delete('proyecto', "nombre = '" . $id . "'");
+            $this->db->delete('proyecto', "id = '" . $id . "'");
         } else {
             echo '<h1>No se encontro persona en la BD</h1>';
             die;

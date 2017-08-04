@@ -18,7 +18,7 @@
         <?php
         $con = 1;
        $mensaje="'¿Desea eliminar?'";
-        foreach ($this->ListaJueces as $lista => $value) {
+        foreach ($this->ListaProyecto as $lista => $value) {
             echo '<tr>';
             echo '<td>';
             echo $con;

@@ -1,6 +1,6 @@
 <?php
 
-Class Juez_Model extends Models {
+Class Pregunta_Model extends Models {
 
     public function __construct() {
         parent::__construct();
@@ -17,62 +17,63 @@ Class Juez_Model extends Models {
             die;
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
-            $this->db->insert('persona', array(
+            $this->db->insert('preguntas', array(
                 'id' => $datos['tf_id'],
-                'descripcion' => $datos['tf_name'],
-                'categoria' => $datos['tf_email']));
-                'valorPregunta' => $datos['tf_email']));
+                'descripcion' => $datos['tf_descripcion'],
+                'categoria' => $datos['tf_categoria'],
+                'valorPregunta' => $datos['tf_valorPregunta']));
         }
     }
 
-    public function ListaJueces() {
+    public function listaPregunta() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaListaJuez = $this->db->select("SELECT * FROM persona ");
-        return $consultaListaJuez;
+        $consultaListaPregunta = $this->db->select("SELECT * FROM preguntas ");
+        return $consultaListaPregunta;
     }
 
-    public function DatosJuez($id) {
+    public function datosPregunta($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
-                . "WHERE cedula = '" . $id . "' ");
+        $consultaExistenciaJuez = $this->db->select("SELECT * FROM preguntas "
+                . "WHERE id = '" . $id . "' ");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaPregunta != null) {
             //Si ya existe, realizare un update
-            return $consultaExistenciaJuez;
+            return $consultaExistenciaPregunta;
         } else {
-            echo 'Usuario no Encontrado';
+            echo 'Pregunta no Encontrada';
             die;
         }
     }
 
-    public function actualizarJuez($datos) {
+    public function actualizarPregunta($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
-                . "WHERE cedula = '" . $datos['tf_id'] . "' ");
+        $consultaExistenciaPregunta = $this->db->select("SELECT * FROM preguntas "
+                . "WHERE id = '" . $datos['tf_id'] . "' ");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaPregunta != null) {
             //Si ya existe, realizare un update
             $posData = array(
-                'cedula' => $datos['tf_id'],
-                'nombre' => $datos['tf_name'],
-                'correo' => $datos['tf_email']);
+           'id' => $datos['tf_id'],
+                'descripcion' => $datos['tf_descripcion'],
+                'categoria' => $datos['tf_categoria'],
+                'valorPregunta' => $datos['tf_valorPregunta']);
 
-            $this->db->update('persona', $posData, "`cedula` = '{$datos['tf_id']}'");
+            $this->db->update('preguntas', $posData, "`id` = '{$datos['tf_id']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
-            echo 'Usuario no Encontrado';
+            echo 'Pregunta no Encontrada';
             die;
         }
     }
 
-    public function eliminarJuez($id) {
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
-                . "WHERE cedula = '" . $id . "'");
+    public function eliminarPregunta($id) {
+        $consultaExistenciaPregunta = $this->db->select("SELECT * FROM preguntas "
+                . "WHERE id = '" . $id . "'");
 
-        if ($consultaExistenciaJuez != null) {
-            $this->db->delete('persona', "cedula = '" . $id . "'");
+        if ($consultaExistenciaPregunta != null) {
+            $this->db->delete('preguntas', "id = '" . $id . "'");
         } else {
-            echo '<h1>No se encontro persona en la BD</h1>';
+            echo '<h1>No se encontro la pregunta en la BD</h1>';
             die;
         }
     }
