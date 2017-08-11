@@ -4,21 +4,23 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/xampp/htdocs/D-Soft/views/juez/agregarJuez.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/header.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/controllers/dashboard.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/Bases%20de%20datos/bd_d-soft.sql</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/controllers/dashboard.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/views/header.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/proyecto/editarProyecto.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/index.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/index/index.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/juez_model.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/matricula_model.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/juez/verJuez.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/libs/View.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/pregunta/agregarPregunta.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/footer.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/pregunta/editaPregunta.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/proyecto_model.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/dashboard/index.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/pregunta_model.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/controllers/matricula.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/proyecto/verProyecto.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/Bases%20de%20datos/bd_app.sql</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/login.php</file>

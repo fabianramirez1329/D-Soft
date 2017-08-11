@@ -15,13 +15,9 @@
             <th colspan="2" class="text-center">Acción</th>
         </tr>
         <?php
-        $con = 1;
        $mensaje="'¿Desea eliminar?'";
         foreach ($this->ListaPregunta as $lista => $value) {
             echo '<tr>';
-            echo '<td>';
-            echo $con;
-            echo '</td>';
             echo '<td>';
             echo $value['id'];
             echo '</td>';
@@ -35,11 +31,10 @@
             echo $value['valorPregunta'];
             echo '<td>';
             echo '<td class = "text-center">';
-            echo '<a class="btn-sm btn-primary" href="editarPregunta/' . $value['cedula'] . '">Editar</a> &nbsp&nbsp&nbsp';
-            echo '<a class="btn-sm btn-warning" href="eliminarPregunta/' . $value['cedula'] . '" onclick="return confirm(' . $mensaje . ');"> Eliminar</a>';
+            echo '<a class="btn-sm btn-primary" href="editarPregunta/' . $value['id'] . '">Editar</a> &nbsp&nbsp&nbsp';
+            echo '<a class="btn-sm btn-warning" href="eliminarPregunta/' . $value['id'] . '" onclick="return confirm(' . $mensaje . ');"> Eliminar</a>';
             echo '</td>';
             echo '</tr>';
-            $con++;
             
         }
         ?>

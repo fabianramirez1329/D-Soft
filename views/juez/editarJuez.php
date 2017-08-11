@@ -14,6 +14,7 @@
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_name" name="tf_name" value="<?php echo $this->DatosJuez[0]['nombre']; ?>"/>
                 </div>
+                
                 <label for="tf_id" class="col-xs-2 control-label">Cedula:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm"  id="tf_id" name="tf_id" value="<?php echo $this->DatosJuez[0]['cedula']; ?>" disabled=" "/>
