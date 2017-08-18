@@ -5,7 +5,7 @@ class Dashboard extends Controllers {
         Auth::handleLogin();
     }
     function index(){
-        $this->view->title = 'Empresa';
+        $this->view->title = 'D-Soft inc';
         $this->view->render('header');
         $this->view->render('dashboard/index');
         $this->view->render('footer');

@@ -17,18 +17,15 @@ Class Pregunta_Model extends Models {
             die;
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
-            $categoria1="se";
-            $categoria2="ci";
-            $categoria3="se";
-            $categoria4="se";
-            if ($datos['cmb_categoria'] . value == $categoria1) {
-                $c="Semillitas";
+
+            
+            
                 $this->db->insert('preguntas', array(
                     'descripcion' => $datos['tf_descripcion'],
                     'codigo' => $datos['cmb_categoria'],
-                    'categoria' => $datos[$c],
+                    'categoria' => $datos['cmb_categoria'],
                     'valorPregunta' => $datos['tf_valorPregunta']));
-            }
+            
         }
     }
 
@@ -60,10 +57,10 @@ Class Pregunta_Model extends Models {
         if ($consultaExistenciaPregunta != null) {
             //Si ya existe, realizare un update
             $posData = array(
-                'id' => $datos['tf_id'],
                 'descripcion' => $datos['tf_descripcion'],
-                'categoria' => $datos['tf_categoria'],
-                'valorPregunta' => $datos['tf_valorPregunta']);
+                    'codigo' => $datos['cmb_categoria'],
+                    'categoria' => $datos['cmb_categoria'],
+                    'valorPregunta' => $datos['tf_valorP']);
 
             $this->db->update('preguntas', $posData, "`id` = '{$datos['tf_id']}'");
         } else {

@@ -4,7 +4,7 @@ class Index extends Controllers {
         parent::__construct();   
     }
     function index(){
-        $this->view->title = 'Empresa'; 
+        $this->view->title = 'D-Soft inc'; 
         $this->view->render('header');
         $this->view->render('index/index');
         $this->view->render('footer');

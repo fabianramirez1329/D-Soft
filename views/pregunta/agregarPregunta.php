@@ -11,21 +11,20 @@
 
                 <label for="tf_descripcion" class="col-xs-2 control-label">Descripcion:</label>
                 <div class="col-xs-3">
-                    <input type="text" class="text-uppercase form-control input-xlarge"  id="tf_descripcion" name="tf_descripcion"/>
+                    <input type="text" class="text-uppercase form-control input-sm"  id="tf_descripcion" name="tf_descripcion"/>
                 </div>
-                <br></br>
-                <br></br>
+                <br></br>               
                 <label for="tf_valorPregunta" class="col-xs-2 control-label">Valor de la pregunta:</label>
                 <div class="col-xs-3">
-                    <input type="text" class="text-uppercase form-control input-xlarge"  id="tf_valorPregunta" name="tf_valorPregunta"/>
+                    <input type="text" class="text-uppercase form-control input-sm"  id="tf_valorPregunta" name="tf_valorPregunta"/>
                 </div>
-                <br></br>
+          
                 <br></br>
                 <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
                 <div class="col-xs-2">
-                    <SELECT NAME="cmb_categoria" SIZE=1 onChange="javascript:alert('prueba');"> 
+                    <SELECT NAME="cmb_categoria" SIZE=1 onChange=""> 
                         <OPTION value="se">Semillitas</OPTION>
-                        <OPTION value="ci">Feria Cientifica</OPTION>
+                        <OPTION value="fc">Feria Cientifica</OPTION>
                         <OPTION value="ei">Expo-Ingeniería</OPTION>
                         <OPTION value="ej">Expo-Joven</OPTION> 
                     </SELECT> 

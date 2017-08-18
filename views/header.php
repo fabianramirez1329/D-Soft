@@ -98,13 +98,14 @@
                       </li>
                     <?php }?>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ausencias <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Identificador <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                           <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarAusencias">Cargar Ausencias</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/verAusencias">Ver Ausencias</a></li>
+                          <li><a href="<?php echo URL; ?>identificador/agregarIdentificador">Agregar Identificador</a></li>
+                          <li><a href="<?php echo URL; ?>identificador/verIdentificador">Ver Identificadores</a></li>
                           <?php } if (Session::get('tipoUsuario') == 4){ ?>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/consultarAusencias">Consultar Ausencias</a></li>
+                         <?php } ?>
+                          <?php if (Session::get('tipoUsuario') <= 2){ ?>
                           <?php } ?>
                         </ul>
                       </li>

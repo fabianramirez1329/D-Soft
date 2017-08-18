@@ -37,9 +37,10 @@ class Pregunta extends Controllers {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
+        $datos['tf_id'] = $_POST['tf_id'];
         $datos['cmb_categoria'] = $_POST['cmb_categoria'];
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
-        $datos['tf_valorPregunta'] = $_POST['tf_valorPregunta'];
+        $datos['tf_valorP'] = $_POST['tf_valorP'];
         $this->model->actualizarPregunta($datos);
 
         header("Location:" . URL . "pregunta/verPregunta");
@@ -57,7 +58,7 @@ class Pregunta extends Controllers {
 
 
         $this->view->title = 'Datos';
-        $this->model->eliminarJuez($id);
+        $this->model->eliminarPregunta($id);
         header("Location: " . URL . "pregunta/verPregunta");
     }
 

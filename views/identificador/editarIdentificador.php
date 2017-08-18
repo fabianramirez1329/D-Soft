@@ -3,10 +3,10 @@
 //die;
 ?>
 <div class="row">
-    <h1>Editar Pregunta</h1>
-    <form id="MyForm" action="<?php echo URL; ?>pregunta/actualizarPregunta" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    <h1>Editar Identificador</h1>
+    <form id="MyForm" action="<?php echo URL; ?>identificador/actualizarIdentificador" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-            <legend class="text-center">Datos de la Pregunta</legend>
+            <legend class="text-center">Datos del identificador</legend>
  
             <!--L2 Nombre Estudiante (Formulario Hugo)-->
             
@@ -30,17 +30,10 @@
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_descripcion" name="tf_descripcion" value="<?php echo $this->datosPregunta[0]['descripcion']; ?>"/>
                 </div> 
                   <br></br>
-               <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
-             
+                <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
                 <div class="col-xs-2">
-                    
-                    <SELECT NAME="cmb_categoria" SIZE=1 onChange="" 
-                        <OPTION value="se">Semillitas</OPTION>
-                        <OPTION value="fc">Feria Cientifica</OPTION>
-                        <OPTION value="ei">Expo-Ingeniería</OPTION>
-                        <OPTION value="ej">Expo-Joven</OPTION> 
-                    </SELECT> 
-                </div> 
+                    <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_categoria" name="tf_categoria" value="<?php echo $this->datosPregunta[0]['categoria']; ?>"/>
+                </div>
                   <br></br>
                 <label for="tf_valorP" class="col-xs-2 control-label">Valor de Pregunta:</label>
                 <div class="col-xs-2">

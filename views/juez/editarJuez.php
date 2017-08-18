@@ -6,7 +6,7 @@
     <h1>Editar Juez</h1>
     <form id="MyForm" action="<?php echo URL; ?>juez/actualizarJuez" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-            <legend class="text-center">DATOS DEL ESTUDIANTE</legend>
+            <legend class="text-center">DATOS DEL JUEZ</legend>
  
             <!--L2 Nombre Estudiante (Formulario Hugo)-->
             <div class="form-group">

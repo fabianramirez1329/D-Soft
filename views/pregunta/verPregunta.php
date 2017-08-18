@@ -15,7 +15,7 @@
             <th colspan="2" class="text-center">Acción</th>
         </tr>
         <?php
-       $mensaje="'¿Desea eliminar?'";
+        $mensaje = "'¿Desea eliminar?'";
         foreach ($this->ListaPregunta as $lista => $value) {
             echo '<tr>';
             echo '<td>';
@@ -25,7 +25,16 @@
             echo $value['descripcion'];
             echo '</td>';
             echo '<td>';
-            echo $value['categoria'];
+            if ($value['categoria'] == "ei") {
+                echo 'Expo-Ingenieria';
+            } elseif ($value['categoria'] == "se") {
+                echo 'Semillitas';
+            }elseif ($value['categoria'] == "ej") {
+                echo 'Expo-Joven';
+            }elseif ($value['categoria'] == "fc") {
+                echo 'Feria Cientifica';
+            }
+      
             echo '</td>';
             echo '<td>';
             echo $value['valorPregunta'];
@@ -35,7 +44,6 @@
             echo '<a class="btn-sm btn-warning" href="eliminarPregunta/' . $value['id'] . '" onclick="return confirm(' . $mensaje . ');"> Eliminar</a>';
             echo '</td>';
             echo '</tr>';
-            
         }
         ?>
         <tr>
