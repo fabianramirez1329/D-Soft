@@ -27,6 +27,7 @@ class Juez extends Controllers {
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_id'] = $_POST['tf_id'];
+        $datos['tf_password'] = $_POST['tf_password'];
         $datos['tf_email'] = $_POST['tf_email'];
         $this->model->guardarJuez($datos);
         

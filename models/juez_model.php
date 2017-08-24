@@ -16,10 +16,13 @@ Class Juez_Model extends Models {
             echo 'Error ya existe un usuario con ese mismo nombre';
             die;
         } else {
+            $tipoUsuario=2;
             //Sino Inserto datos de Pre-Matricula del Estudiante
             $this->db->insert('persona', array(
                 'cedula' => $datos['tf_id'],
                 'nombre' => $datos['tf_name'],
+                'password' => Hash::create('md5', $_POST['tf_password'],HASH_PASSWORD_KEY),
+                'tipoUsuario' => $tipoUsuario,
                 'correo' => $datos['tf_email']));
         }
     }

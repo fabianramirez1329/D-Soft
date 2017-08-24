@@ -8,9 +8,11 @@ class Pregunta extends Controllers {
 
     function agregarPregunta() {
         $this->view->title = 'Iniciar sesión';
+        $this->view->consultaIdentificadores = $this->model->consultaIdentificadores();
         $this->view->render('header');
         $this->view->render('pregunta/agregarPregunta');
         $this->view->render('footer');
+        
     }
 
     function verPregunta() {

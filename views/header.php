@@ -29,7 +29,7 @@
         }
         ?>
         <script type="text/javascript">
-            jQuery(document).ready(function() {
+            jQuery(document).ready(function () {
                 //validar campos       
                 jQuery("#MyForm").validationEngine();
                 //mostrar mensaje    
@@ -38,161 +38,164 @@
             });
         </script> 
     </head>
-  <body>
-<?php Session::init(); 
- ?>
-            <!--Si esta logeded-->
-            <!--Menu-->
-<?php if (Session::get('loggedIn') == true): ?> 
-                <div class="row">
-                    <div class="col-xs-12">
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?php echo URL; ?>index/index">Inicio</a>
-                  </div>
-
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jueces <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>juez/agregarJuez">Agregar Juez</a></li>
-                          <li><a href="<?php echo URL; ?>juez/verJuez">Ver Juez</a></li>
-                          <?php if (Session::get('tipoUsuario') < 2){ ?>
-                          <?php }  ?>
-                        </ul>
-                      </li>
-                      <?php if (Session::get('tipoUsuario') <= 3){ ?>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyectos <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>proyecto/agregarProyecto">Agregar Proyecto</a></li>
-                          <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyecto</a></li>
-                          <?php } if (Session::get('tipoUsuario') <= 3){ ?>
-                          <?php }?>
-                        </ul>
-                      </li>
-                    <?php }?>
-                      <?php if (Session::get('tipoUsuario') <= 3){ ?>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Preguntas <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <?php if (Session::get('tipoUsuario') == 1){ ?>
-                            <li><a href="<?php echo URL; ?>pregunta/agregarPregunta">Agregar Pregunta</a></li>
-                            <li><a href="<?php echo URL; ?>pregunta/verPregunta">Ver Pregunta</a></li>
-                            <?php } if (Session::get('tipoUsuario') <= 3){ ?>
-                          
-                            <?php }?>
-                            <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          
-                            <?php }?>
-                        </ul>
-                      </li>
-                    <?php }?>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Identificador <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>identificador/agregarIdentificador">Agregar Identificador</a></li>
-                          <li><a href="<?php echo URL; ?>identificador/verIdentificador">Ver Identificadores</a></li>
-                          <?php } if (Session::get('tipoUsuario') == 4){ ?>
-                         <?php } ?>
-                          <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <?php } ?>
-                        </ul>
-                      </li>
-                    <?php if (Session::get('tipoUsuario') == 1){ ?>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administrador <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/ingresarPersonal">Ingresar Personal</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/listaEstudiantesEspecialidad">Lista de Estudiantes Matriculados</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/proyeccionMatricula">Proyección</a></li>
-                          <li><a href="<?php echo URL; ?>seccion/indexConfigSecciones">Configuración Secciones</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/cargaEstudiantesSeccion">Carga Estudiantes-Seccion</a></li>
-                            <li class="divider"></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/index">Actualizar cédulas BD</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordEstu">Reiniciar contraseñas Estudaintes</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordDocente">Reiniciar contraseñas Docente</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/estudiantesVoca">Estudiantes Voca</a></li>
-                            <li class="divider"></li>
-                          <li><a href="<?php echo URL; ?>persona/modificarCedulaEstudiante">Modificar cédula de estudiante</a></li>
-                          <li><a href="<?php echo URL; ?>configSistema/index">Configuración del Sistema</a></li>
-                        </ul>
-                      </li>
-                    <?php }?>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <?php echo $_SESSION['nombre']; ?> <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Editar perfil</a></li>
-                            <li><a href="<?php echo URL; ?>dashboard/logout">Salir</a></li>
-                        </ul>
-                     </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-                    </div>
-                </div>
-                <!--Si no esta loged-->
-<?php else: ?>
-                <div class="row">
-                    <div class="col-xs-12">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?php echo URL; ?>index/index">Inicio</a>
-                  </div>
-
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li><a href="<?php echo URL; ?>login">Iniciar Sesión</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-                    </div>
-                </div>
-<?php endif; ?>
-                <br><br><br>
-            <!--Contenido para mostrar todas las paginas-->
+    <body>
+        <?php Session::init();
+        ?>
+        <!--Si esta logeded-->
+        <!--Menu-->
+        <?php if (Session::get('loggedIn') == true): ?> 
             <div class="row">
-                <div class="col-xs-1"></div>
-                <div class="col-xs-1">
-                    <img src="<?php echo URL; ?>public/img/D-Soft.jpg" alt="Logo Empresa" class="img-rounded pull-left img-responsive">
+                <div class="col-xs-12">
+                    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="<?php echo URL; ?>index/index">Inicio</a>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jueces <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+
+                                                <li><a href="<?php echo URL; ?>juez/agregarJuez">Agregar Juez</a></li>
+                                                <li><a href="<?php echo URL; ?>juez/verJuez">Ver Juez</a></li>
+                                            </ul>
+                                        <?php } ?>
+                                    </li>
+                                    <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyectos <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+
+                                                <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyecto</a></li>
+                                                <?php if (Session::get('tipoUsuario') <= 1) { ?>
+
+                                                    <li><a href="<?php echo URL; ?>proyecto/agregarProyecto">Agregar Proyecto</a></li>
+                                                <?php } if (Session::get('tipoUsuario') <= 2) { ?>
+                                                <?php } ?>
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+                                    <?php if (Session::get('tipoUsuario') == 1) { ?>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Preguntas <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <?php if (Session::get('tipoUsuario') == 1) { ?>
+                                                    <li><a href="<?php echo URL; ?>pregunta/agregarPregunta">Agregar Pregunta</a></li>
+                                                    <li><a href="<?php echo URL; ?>pregunta/verPregunta">Ver Pregunta</a></li>
+                                                <?php } if (Session::get('tipoUsuario') <= 3) { ?>
+
+                                                <?php } ?>
+                                                <?php if (Session::get('tipoUsuario') <= 2) { ?>
+
+                                                <?php } ?>
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+                                    <li class="dropdown">
+                                        <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Identificador <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+
+                                                <li><a href="<?php echo URL; ?>identificador/agregarIdentificador">Agregar Identificador</a></li>
+                                                <li><a href="<?php echo URL; ?>identificador/verIdentificador">Ver Identificadores</a></li>
+                                            <?php } if (Session::get('tipoUsuario') == 4) { ?>
+                                            <?php } ?>
+                                            <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                    <?php if (Session::get('tipoUsuario') == 1) { ?>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administrador <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/ingresarPersonal">Ingresar Personal</a></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/listaEstudiantesEspecialidad">Lista de Estudiantes Matriculados</a></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/proyeccionMatricula">Proyección</a></li>
+                                                <li><a href="<?php echo URL; ?>seccion/indexConfigSecciones">Configuración Secciones</a></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/cargaEstudiantesSeccion">Carga Estudiantes-Seccion</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/index">Actualizar cédulas BD</a></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordEstu">Reiniciar contraseñas Estudaintes</a></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordDocente">Reiniciar contraseñas Docente</a></li>
+                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/estudiantesVoca">Estudiantes Voca</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="<?php echo URL; ?>persona/modificarCedulaEstudiante">Modificar cédula de estudiante</a></li>
+                                                <li><a href="<?php echo URL; ?>configSistema/index">Configuración del Sistema</a></li>
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <?php echo $_SESSION['nombre']; ?> <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Editar perfil</a></li>
+                                            <li><a href="<?php echo URL; ?>dashboard/logout">Salir</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-                <div class="col-xs-8 text-center">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h2>Welcome</h1>
+            </div>
+            <!--Si no esta loged-->
+        <?php else: ?>
+            <div class="row">
+                <div class="col-xs-12">
+                    <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="<?php echo URL; ?>index/index">Inicio</a>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="<?php echo URL; ?>login">Iniciar Sesión</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        <?php endif; ?>
+        <br><br><br>
+        <!--Contenido para mostrar todas las paginas-->
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-1">
+                <img src="<?php echo URL; ?>public/img/D-Soft.jpg" alt="Logo Empresa" class="img-rounded pull-left img-responsive">
+            </div>
+            <div class="col-xs-8 text-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Welcome</h1>
                             <h4><p class="text-success">D-soft</p></h4>
                             <h4><p class="text-succes">xdxd</p></h4>
                             <!--<label id="datetime" size="50"></label>-->
-                        </div>
                     </div>
                 </div>
-                <div class="col-xs-1">
-                    <img src="<?php echo URL; ?>public/img/logoctpcarrizal.png" alt="Logo CTPC" class="img-rounded pull-right img-responsive">
-                </div>
-                <div class="col-xs-1"></div>
             </div>
-            <div class="container">
+            <div class="col-xs-1">
+                <img src="<?php echo URL; ?>public/img/logoctpcarrizal.png" alt="Logo CTPC" class="img-rounded pull-right img-responsive">
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    

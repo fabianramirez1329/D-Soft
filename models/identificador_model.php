@@ -18,17 +18,13 @@ Class Identificador_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
 
-            
-            
-                $this->db->insert('identificador', array(
-                    
-                    'Id' => $datos['tf_id'],
-                    'titulo' => $datos['tf_nombre'],
-                    'Descripcion' => $datos['tf_descripcion'],
-                    'Puntos' => $datos['tf_puntaje']));
-                   
-                
-            
+
+
+            $this->db->insert('identificador', array(
+                'Id' => $datos['tf_id'],
+              
+                'Descripcion' => $datos['tf_descripcion'],
+                'Puntos' => $datos['tf_puntaje']));
         }
     }
 
@@ -54,18 +50,19 @@ Class Identificador_Model extends Models {
 
     public function actualizarIdentificador($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaPregunta = $this->db->select("SELECT * FROM identificador "
-                . "WHERE id = '" . $datos['tf_id'] . "' ");
+        $consultaExistenciaIdentificador = $this->db->select("SELECT * FROM identificador "
+                . "WHERE Id = '" . $datos['tf_id'] . "' ");
 
         if ($consultaExistenciaIdentificador != null) {
             //Si ya existe, realizare un update
             $posData = array(
-                'id' => $datos['tf_id'],
-                'descripcion' => $datos['tf_descripcion'],
-                'categoria' => $datos['tf_categoria'],
-                'valorPregunta' => $datos['tf_valorPregunta']);
+            'Id' => $datos['tf_id'],
+        
+            'Descripcion' => $datos['tf_descripcion'],
+            'Puntos' => $datos['tf_puntaje']);
 
-            $this->db->update('preguntas', $posData, "`id` = '{$datos['tf_id']}'");
+
+            $this->db->update('identificador', $posData, "`Id` = '{$datos['tf_id']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'identificador no Encontrado';
@@ -74,11 +71,11 @@ Class Identificador_Model extends Models {
     }
 
     public function eliminarIdentificador($id) {
-        $consultaExistenciaPregunta = $this->db->select("SELECT * FROM identificador "
-                . "WHERE id = '" . $id . "'");
+        $consultaExistenciaIdentificador = $this->db->select("SELECT * FROM identificador "
+                . "WHERE Id = '" . $id . "'");
 
         if ($consultaExistenciaIdentificador != null) {
-            $this->db->delete('identificador', "id = '" . $id . "'");
+            $this->db->delete('identificador', "Id = '" . $id . "'");
         } else {
             echo '<h1>No se encontro el identificador en la BD</h1>';
             die;

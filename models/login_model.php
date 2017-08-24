@@ -7,8 +7,8 @@ Class Login_Model extends Models{
     }
     public function run(){
         
-        $sth = $this->db->prepare("SELECT * FROM usuario WHERE 
-            nombreUsuario = :tf_usuario AND password = :tf_clave");
+        $sth = $this->db->prepare("SELECT * FROM persona WHERE 
+            cedula = :tf_usuario AND password = :tf_clave");
         
         $sth->execute(
                 array(  ':tf_usuario'   => $_POST['tf_usuario'],

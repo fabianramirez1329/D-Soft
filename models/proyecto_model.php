@@ -21,7 +21,7 @@ Class Proyecto_Model extends Models {
                 'nombre' => $datos['tf_name'],
                 'descripcion' => $datos['tf_descripcion'],
                 'integrantes' => $datos['tf_integrantes'],
-                'categoria' => $datos['tf_categoria']));
+                'categoria' => $datos['cmb_categoria']));
         }
     }
 
@@ -56,7 +56,7 @@ Class Proyecto_Model extends Models {
                 'nombre' => $datos['tf_name'],
                 'descripcion' => $datos['tf_descripcion'],
                 'integrantes' => $datos['tf_integrantes'],
-                'categoria' => $datos['tf_categoria']);
+                'categoria' => $datos['cmb_categoria']);
 
             $this->db->update('proyecto', $posData, "`id` = '{$datos['tf_id']}'");
         } else {

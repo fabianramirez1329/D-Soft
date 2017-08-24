@@ -6,33 +6,27 @@
             <file>file:/D:/xampp/htdocs/D-Soft/views/juez/agregarJuez.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/identificador/agregarIdentificador.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/identificador/verIdentificador.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/models/identificador_model.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/views/login/recuperarClave.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/views/desgloce_puntos/guardarDesglocePuntos.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/header.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/dashboard.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/Bases%20de%20datos/bd_d-soft.sql</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/identificador/editarIdentificador.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/proyecto/editarProyecto.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/views/desgloce_puntos/editarDesglocePuntos.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/index.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/controllers/Identificador.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/index/index.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/juez_model.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/public/font-awesome/css/font-awesome-ie7.min.css</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/models/matricula_model.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/juez/verJuez.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/util/Auth.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/libs/Session.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/libs/View.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/views/pregunta/agregarPregunta.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/footer.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/pregunta/editaPregunta.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/models/proyecto_model.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/dashboard/index.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/views/desgloce_puntos/verDesglocePuntos.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/pregunta_model.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/controllers/matricula.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/proyecto/verProyecto.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/Bases%20de%20datos/bd_app.sql</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/controllers/identificador.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/login.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/pregunta/verPregunta.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/views/login/index.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/models/login_model.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/controllers/proyecto.php</file>
-            <file>file:/D:/xampp/htdocs/D-Soft/views/juez/editarJuez.php</file>
+            <file>file:/D:/xampp/htdocs/D-Soft/controllers/desgloce_puntos.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/index.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/pregunta.php</file>
             <file>file:/D:/xampp/htdocs/D-Soft/controllers/juez.php</file>

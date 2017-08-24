@@ -28,7 +28,7 @@ class Proyecto extends Controllers {
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
         $datos['tf_integrantes'] = $_POST['tf_integrantes'];
-        $datos['tf_categoria'] = $_POST['tf_categoria'];
+        $datos['cmb_categoria'] = $_POST['cmb_categoria'];
        
         $this->model->guardarProyecto($datos);
 
@@ -43,7 +43,7 @@ class Proyecto extends Controllers {
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
         $datos['tf_integrantes'] = $_POST['tf_integrantes'];
-        $datos['tf_categoria'] = $_POST['tf_categoria'];
+        $datos['cmb_categoria'] = $_POST['cmb_categoria'];
         $this->model->actualizarProyecto($datos);
 
         header("Location:" . URL . "proyecto/verProyecto");

@@ -16,7 +16,7 @@ class Identificador extends Controllers {
     function verIdentificador() {
         $this->view->title = 'Vista de Identificador';
         $this->view->render('header');
-        $this->view->ListaIdentificador = $this->model->ListaIdentificador();
+        $this->view->ListaIdentificador = $this->model->listaIdentificador();
         $this->view->render('identificador/verIdentificador');
         $this->view->render('footer');
     }
@@ -28,8 +28,8 @@ class Identificador extends Controllers {
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
         $datos['tf_puntaje'] = $_POST['tf_puntaje'];
         $datos['tf_id'] = $_POST['tf_id'];
-        $datos['tf_nombre'] = $_POST['tf_nombre'];
-      
+
+
         $this->model->guardarIdentificador($datos);
 
         header("Location:" . URL . "identificador/verIdentificador");
@@ -39,18 +39,19 @@ class Identificador extends Controllers {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
-        $datos['cmb_categoria'] = $_POST['cmb_categoria'];
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
-        $datos['tf_valorPregunta'] = $_POST['tf_valorPregunta'];
+        $datos['tf_puntaje'] = $_POST['tf_puntaje'];
+        $datos['tf_id'] = $_POST['tf_id'];
+
         $this->model->actualizarIdentificador($datos);
 
-        header("Location:" . URL . "identificador/verIdentificador");
+        header("Location:" . URL . "Identificador/verIdentificador");
     }
 
     function editarIdentificador($id) {
         $this->view->title = 'Datos';
         $this->view->render('header');
-        $this->view->datosPregunta = $this->model->datosIdentificador($id);
+        $this->view->datosIdentificador = $this->model->datosIdentificador($id);
         $this->view->render('identificador/editarIdentificador');
         $this->view->render('footer');
     }

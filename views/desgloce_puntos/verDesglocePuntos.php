@@ -5,12 +5,11 @@
 <center>
     <table class="table table-condensed">
         <tr>
-            <th colspan="6" class="nombreTabla text-center">Lista de identificadores</th>
+            <th colspan="6" class="nombreTabla text-center">Desgloce de Puntos</th>
         </tr>
         <tr>
-            <th>ID</th>
-            <th>Titulo</th>
-            <th>Descripción</th>
+            <th>idP>
+            <th>idJuez</th>
             <th>Puntos</th>
             <th colspan="2" class="text-center">Acción</th>
         </tr>

@@ -1,7 +1,3 @@
-<?php
-//print_r($this->especialidadEstudiante);
-//die;
-?>
 <div class="row">
     <form id="MyForm" action="<?php echo URL; ?>pregunta/guardarPregunta" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
@@ -18,17 +14,30 @@
                 <div class="col-xs-3">
                     <input type="text" class="text-uppercase form-control input-sm"  id="tf_valorPregunta" name="tf_valorPregunta"/>
                 </div>
-          
+
                 <br></br>
                 <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
                 <div class="col-xs-2">
-                    <SELECT NAME="cmb_categoria" SIZE=1 onChange=""> 
+                    <SELECT class="form-control input-sm" NAME="cmb_categoria" SIZE=1 onChange=""> 
                         <OPTION value="se">Semillitas</OPTION>
                         <OPTION value="fc">Feria Cientifica</OPTION>
                         <OPTION value="ei">Expo-Ingeniería</OPTION>
                         <OPTION value="ej">Expo-Joven</OPTION> 
                     </SELECT> 
                 </div> 
+                <br></br>
+                <label for="tf_identificador" class="col-xs-2 control-label">Identificador:</label>
+                <div class="col-xs-2">
+                    <select class="form-control input-sm" name="tf_identificador" id="tf_identificador">
+                        <option value="">Seleccione</option>
+                        <?php
+                        foreach ($this->consultaIdentificadores as $value) {
+                            echo "<option value='" . $value['Id'] . "'>";
+                            echo $value['Descripcion'] . "</option>";
+                        }
+                        ?>
+                    </select> 
+                </div>
             </div> 
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 

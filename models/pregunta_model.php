@@ -34,6 +34,12 @@ Class Pregunta_Model extends Models {
         $consultaListaPregunta = $this->db->select("SELECT * FROM preguntas ");
         return $consultaListaPregunta;
     }
+     public function consultaIdentificadores() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
+        return $consultaListaIdentificador;
+    }
+
 
     public function datosPregunta($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula

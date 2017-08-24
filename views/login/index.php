@@ -8,7 +8,7 @@
         <form id="MyForm" action="login/run" method="POST" enctype="multipart/form-data" class="form-horizontal">
             <fieldset>
                 <div class="form-group">
-                    <label for="tf_usuario" class="col-md-4 col-xs-6 control-label">Nombre Usuario:</label>
+                    <label for="tf_usuario" class="col-md-4 col-xs-6 control-label">Cédula:</label>
                     <div class="col-md-8 col-xs-6 ">
                         <input class="form-control input-sm validate[required]" name="tf_usuario" id="tf_usuario" placeholder="Nombre usuario" type="text">
                     </div>

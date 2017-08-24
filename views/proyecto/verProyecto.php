@@ -17,7 +17,7 @@
         </tr>
         <?php
         $con = 1;
-       $mensaje="'¿Desea eliminar?'";
+        $mensaje = "'¿Desea eliminar?'";
         foreach ($this->ListaProyecto as $lista => $value) {
             echo '<tr>';
             echo '<td>';
@@ -33,7 +33,15 @@
             echo $value['integrantes'];
             echo '</td>';
             echo '<td>';
-            echo $value['categoria'];
+            if ($value['categoria'] == "ei") {
+                echo 'Expo-Ingenieria';
+            } elseif ($value['categoria'] == "se") {
+                echo 'Semillitas';
+            } elseif ($value['categoria'] == "ej") {
+                echo 'Expo-Joven';
+            } elseif ($value['categoria'] == "fc") {
+                echo 'Feria Cientifica';
+            }
             echo '</td>';
             echo '<td class = "text-center">';
             echo '<a class="btn-sm btn-primary" href="editarProyecto/' . $value['id'] . '">Editar</a> &nbsp&nbsp&nbsp';
@@ -41,7 +49,6 @@
             echo '</td>';
             echo '</tr>';
             $con++;
-            
         }
         ?>
         <tr>
