@@ -25,7 +25,7 @@
                    <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_codigo" name="tf_codigo" value="<?php echo $this->datosPregunta[0]['codigo']; ?>"/>
                 </div>
                   <br></br>
-                <label for="tf_descripcion" class="col-xs-2 control-label">Descripción:</label>
+                <label for="tf_descripcion" class="col-xs-2 control-label">Identificador:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_descripcion" name="tf_descripcion" value="<?php echo $this->datosPregunta[0]['descripcion']; ?>"/>
                 </div> 

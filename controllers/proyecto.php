@@ -4,6 +4,8 @@ class Proyecto extends Controllers {
 
     function __construct() {
         parent::__construct();
+         Auth::handleLogin();
+         Auth::nivelDeSeguridad();
     }
 
     function agregarProyecto() {

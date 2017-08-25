@@ -74,10 +74,12 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyectos <span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
-
-                                                <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyecto</a></li>
+                                                <?php if (Session::get('tipoUsuario') == 2) { ?>
+                                                <li><a href="<?php echo URL; ?>proyecto_Cliente/verProyecto_Cliente">Ver Proyectos</a></li>
+                                                <?php } ?>
+                                                
                                                 <?php if (Session::get('tipoUsuario') <= 1) { ?>
-
+                                                       <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyectos</a></li>
                                                     <li><a href="<?php echo URL; ?>proyecto/agregarProyecto">Agregar Proyecto</a></li>
                                                 <?php } if (Session::get('tipoUsuario') <= 2) { ?>
                                                 <?php } ?>
@@ -107,6 +109,19 @@
 
                                                 <li><a href="<?php echo URL; ?>identificador/agregarIdentificador">Agregar Identificador</a></li>
                                                 <li><a href="<?php echo URL; ?>identificador/verIdentificador">Ver Identificadores</a></li>
+                                            <?php } if (Session::get('tipoUsuario') == 4) { ?>
+                                            <?php } ?>
+                                            <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                      <li class="dropdown">
+                                        <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categoria <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+
+                                                <li><a href="<?php echo URL; ?>categoria/agregarCategoria">Agregar Categoria</a></li>
+                                                <li><a href="<?php echo URL; ?>categoria/verCategoria">Ver Categorias</a></li>
                                             <?php } if (Session::get('tipoUsuario') == 4) { ?>
                                             <?php } ?>
                                             <?php if (Session::get('tipoUsuario') <= 2) { ?>
@@ -191,9 +206,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-1">
+           <!--  <div class="col-xs-1">
                 <img src="<?php echo URL; ?>public/img/logoctpcarrizal.png" alt="Logo CTPC" class="img-rounded pull-right img-responsive">
-            </div>
+            </div>-->
             <div class="col-xs-1"></div>
         </div>
         <div class="container">

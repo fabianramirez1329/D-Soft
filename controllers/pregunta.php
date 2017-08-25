@@ -4,6 +4,8 @@ class Pregunta extends Controllers {
 
     function __construct() {
         parent::__construct();
+          Auth::handleLogin();
+         Auth::nivelDeSeguridad();
     }
 
     function agregarPregunta() {
@@ -19,6 +21,7 @@ class Pregunta extends Controllers {
         $this->view->title = 'Vista de Preguntas';
         $this->view->render('header');
         $this->view->ListaPregunta = $this->model->ListaPregunta();
+        $this->view->ListaIdentificador = $this->model->ListaIdentificador();
         $this->view->render('pregunta/verPregunta');
         $this->view->render('footer');
     }
@@ -27,9 +30,10 @@ class Pregunta extends Controllers {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
-        $datos['cmb_categoria'] = $_POST['cmb_categoria'];
+        $datos['tf_categoria'] = $_POST['tf_categoria'];
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
         $datos['tf_valorPregunta'] = $_POST['tf_valorPregunta'];
+         $datos['tf_identificador'] = $_POST['tf_identificador'];
         $this->model->guardarPregunta($datos);
 
         header("Location:" . URL . "pregunta/verPregunta");
@@ -40,7 +44,7 @@ class Pregunta extends Controllers {
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
         $datos['tf_id'] = $_POST['tf_id'];
-        $datos['cmb_categoria'] = $_POST['cmb_categoria'];
+        $datos['tf_categoria'] = $_POST['tf_categoria'];
         $datos['tf_descripcion'] = $_POST['tf_descripcion'];
         $datos['tf_valorP'] = $_POST['tf_valorP'];
         $this->model->actualizarPregunta($datos);

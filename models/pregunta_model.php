@@ -18,14 +18,14 @@ Class Pregunta_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
 
-            
-            
-                $this->db->insert('preguntas', array(
-                    'descripcion' => $datos['tf_descripcion'],
-                    'codigo' => $datos['cmb_categoria'],
-                    'categoria' => $datos['cmb_categoria'],
-                    'valorPregunta' => $datos['tf_valorPregunta']));
-            
+
+
+            $this->db->insert('preguntas', array(
+                'descripcion' => $datos['tf_descripcion'],
+                'codigo' => $datos['cmb_categoria'],
+                'categoria' => $datos['tf_categoria'],
+                'idIdentificador' => $datos['tf_identificador'],
+                'valorPregunta' => $datos['tf_valorPregunta']));
         }
     }
 
@@ -34,12 +34,17 @@ Class Pregunta_Model extends Models {
         $consultaListaPregunta = $this->db->select("SELECT * FROM preguntas ");
         return $consultaListaPregunta;
     }
-     public function consultaIdentificadores() {
+    public function ListaIdentificador() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
         return $consultaListaIdentificador;
     }
 
+    public function consultaIdentificadores() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
+        return $consultaListaIdentificador;
+    }
 
     public function datosPregunta($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
@@ -64,10 +69,10 @@ Class Pregunta_Model extends Models {
             //Si ya existe, realizare un update
             $posData = array(
                 'descripcion' => $datos['tf_descripcion'],
-                    'codigo' => $datos['cmb_categoria'],
-                    'categoria' => $datos['cmb_categoria'],
-                    'valorPregunta' => $datos['tf_valorP']);
-
+                'codigo' => $datos['tf_categoria'],
+                'categoria' => $datos['tf_categoria'],
+                'idIdentificador' => $datos['tf_identificador'],
+                'valorPregunta' => $datos['tf_valorP']);
             $this->db->update('preguntas', $posData, "`id` = '{$datos['tf_id']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante

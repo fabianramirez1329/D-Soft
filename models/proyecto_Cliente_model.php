@@ -1,6 +1,6 @@
 <?php
 
-Class Proyecto_Model extends Models {
+Class Proyecto_Cliente_Model extends Models {
 
     public function __construct() {
         parent::__construct();
@@ -25,11 +25,7 @@ Class Proyecto_Model extends Models {
         }
     }
 
-    public function ListaProyecto() {
-        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaListaProyecto = $this->db->select("SELECT * FROM proyecto ");
-        return $consultaListaProyecto;
-    }
+ 
 
     public function ListaProyecto_Cliente() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula

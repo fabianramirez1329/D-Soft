@@ -5,10 +5,11 @@
 <center>
     <table class="table table-condensed">
         <tr>
-            <th colspan="6" class="nombreTabla text-center">Lista de Preguntas</th>
+            <th colspan="7" class="nombreTabla text-center">Lista de Preguntas</th>
         </tr>
         <tr>
             <th>ID</th>
+            <th>Identificador</th>
             <th>Descripcion</th>
             <th>Categoria</th>
             <th>Valor Pregunta</th>
@@ -21,6 +22,16 @@
             echo '<td>';
             echo $value['id'];
             echo '</td>';
+            
+            echo '<td>';
+            foreach ($this->ListaIdentificador as $values) {
+                if($values['Id'] == $value ['idIdentificador'])
+                {
+                    echo $values['Descripcion'];
+                }
+            }
+            echo '</td>';
+            
             echo '<td>';
             echo $value['descripcion'];
             echo '</td>';
@@ -29,12 +40,12 @@
                 echo 'Expo-Ingenieria';
             } elseif ($value['categoria'] == "se") {
                 echo 'Semillitas';
-            }elseif ($value['categoria'] == "ej") {
+            } elseif ($value['categoria'] == "ej") {
                 echo 'Expo-Joven';
-            }elseif ($value['categoria'] == "fc") {
+            } elseif ($value['categoria'] == "fc") {
                 echo 'Feria Cientifica';
             }
-      
+
             echo '</td>';
             echo '<td>';
             echo $value['valorPregunta'];
@@ -47,10 +58,10 @@
         }
         ?>
         <tr>
-            <td colspan='6' class="lineaFin"></td
+            <td colspan='7' class="lineaFin"></td
         </tr>
         <tr>
-            <td colspan='6'>Última línea</td>
+            <td colspan='7'>Última línea</td>
         </tr>
     </table>
 </center>

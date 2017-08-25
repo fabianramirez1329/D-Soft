@@ -4,6 +4,8 @@ class Desgloce_puntos extends Controllers {
 
     function __construct() {
         parent::__construct();
+          Auth::handleLogin();
+         Auth::nivelDeSeguridad();
     }
 
     function agregarDesgloce_puntos() {

@@ -16,14 +16,17 @@
                 </div>
 
                 <br></br>
-                <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
+            <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
                 <div class="col-xs-2">
-                    <SELECT class="form-control input-sm" NAME="cmb_categoria" SIZE=1 onChange=""> 
-                        <OPTION value="se">Semillitas</OPTION>
-                        <OPTION value="fc">Feria Cientifica</OPTION>
-                        <OPTION value="ei">Expo-Ingeniería</OPTION>
-                        <OPTION value="ej">Expo-Joven</OPTION> 
-                    </SELECT> 
+                    <select class="form-control input-sm" name="tf_categoria" id="tf_categoria">
+                        <option value="">Seleccione</option>
+                        <?php
+                        foreach ($this->consultaCategoria as $value) {
+                            echo "<option value='" . $value['id'] . "'>";
+                            echo $value['nombre'] . "</option>";
+                        }
+                        ?>
+                    </select> 
                 </div> 
                 <br></br>
                 <label for="tf_identificador" class="col-xs-2 control-label">Identificador:</label>

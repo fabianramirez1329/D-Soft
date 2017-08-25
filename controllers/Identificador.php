@@ -31,7 +31,7 @@ class Identificador extends Controllers {
 
 
         $this->model->guardarIdentificador($datos);
-
+        
         header("Location:" . URL . "identificador/verIdentificador");
     }
 
