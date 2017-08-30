@@ -199,9 +199,6 @@
             <div class="col-xs-8 text-center">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2>Welcome</h1>
-                            <h4><p class="text-success">D-soft</p></h4>
-                            <h4><p class="text-succes">xdxd</p></h4>
                             <!--<label id="datetime" size="50"></label>-->
                     </div>
                 </div>

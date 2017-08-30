@@ -21,7 +21,7 @@
                     <select class="form-control input-sm" name="tf_categoria" id="tf_categoria">
                         <option value="">Seleccione</option>
                         <?php
-                        foreach ($this->consultaCategoria as $value) {
+                        foreach ($this->consultaCategorias as $value) {
                             echo "<option value='" . $value['id'] . "'>";
                             echo $value['nombre'] . "</option>";
                         }

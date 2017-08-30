@@ -15,7 +15,7 @@
                 <br></br>
                 <label for="tf_descripcion" class="col-xs-2 control-label">Descripción:</label>
                 <div class="col-xs-3">
-                    <input type="text" class="text-uppercase form-control input-sm"  id="tf_descripcion" name="tf_descripcion"/>
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_descripcion" name="tf_descripcion"/>
                 </div>
                 <br></br>
                 <label for="tf_integrantes" class="col-xs-2 control-label">Integrantes:</label>
@@ -26,10 +26,13 @@
                 <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
                 <div class="col-xs-3">
                     <SELECT class="form-control input-sm" NAME="cmb_categoria" SIZE=1 onChange=""> 
-                        <OPTION value="se">Semillitas</OPTION>
-                        <OPTION value="fc">Feria Cientifica</OPTION>
-                        <OPTION value="ei">Expo-Ingeniería</OPTION>
-                        <OPTION value="ej">Expo-Joven</OPTION> 
+                       <option value="">Seleccione</option>
+                        <?php
+                        foreach ($this->consultaCategorias as $value) {
+                            echo "<option value='" . $value['nombre'] . "'>";
+                            echo $value['nombre'] . "</option>";
+                        }
+                        ?>
                     </SELECT> 
                 </div> 
             </div> 

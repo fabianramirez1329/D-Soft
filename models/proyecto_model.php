@@ -31,10 +31,29 @@ Class Proyecto_Model extends Models {
         return $consultaListaProyecto;
     }
 
+    public function consultaCategorias() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaCategoria = $this->db->select("SELECT * FROM categorias ");
+        return $consultaListaCategoria;
+    }
+
+    public function ListaCategorias() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaCategoria = $this->db->select("SELECT * FROM categorias ");
+        return $consultaListaCategoria;
+    }
+
     public function ListaProyecto_Cliente() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaListaProyecto = $this->db->select("SELECT * FROM proyecto ");
         return $consultaListaProyecto;
+    }
+
+    public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM proyecto "
+                . "WHERE nombre LIKE '%" . $ced_estudiante . "%'");
+        echo json_encode($resultado);
     }
 
     public function DatosProyecto($id) {

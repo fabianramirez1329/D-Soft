@@ -22,28 +22,23 @@
             echo '<td>';
             echo $value['id'];
             echo '</td>';
-            
+
             echo '<td>';
             foreach ($this->ListaIdentificador as $values) {
-                if($values['Id'] == $value ['idIdentificador'])
-                {
+                if ($values['Id'] == $value ['idIdentificador']) {
                     echo $values['Descripcion'];
                 }
             }
             echo '</td>';
-            
+
             echo '<td>';
             echo $value['descripcion'];
             echo '</td>';
             echo '<td>';
-            if ($value['categoria'] == "ei") {
-                echo 'Expo-Ingenieria';
-            } elseif ($value['categoria'] == "se") {
-                echo 'Semillitas';
-            } elseif ($value['categoria'] == "ej") {
-                echo 'Expo-Joven';
-            } elseif ($value['categoria'] == "fc") {
-                echo 'Feria Cientifica';
+            foreach ($this->ListaCategoria as $val) {
+                if ($val['id'] == $value ['codigo']) {
+                    echo $val['nombre'];
+                }
             }
 
             echo '</td>';

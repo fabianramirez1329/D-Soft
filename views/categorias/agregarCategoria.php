@@ -13,6 +13,12 @@
                     <input type="text" class="form-control input-sm validate[required]"  id="tf_name" name="tf_name"/>
                 </div>
                 <br></br>
+                <div class="form-group">
+                <label for="tf_codigo" class="col-xs-2 control-label">Codigo:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_codigo" name="tf_codigo"/>
+                </div>
+                <br></br>
               
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 

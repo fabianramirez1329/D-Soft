@@ -4,8 +4,10 @@ class Categoria extends Controllers {
 
     function __construct() {
         parent::__construct();
+        $this->view->js = array('categorias/js/jsCategoria.js');
         Auth::handleLogin();
         Auth::nivelDeSeguridad();
+        
     }
 
     function agregarCategoria() {
@@ -23,12 +25,17 @@ class Categoria extends Controllers {
         $this->view->render('footer');
     }
 
+    function buscarEstuRatif($ced_estudiante) {
+        $this->model->buscarEstuRatif($ced_estudiante);
+    }
+
     function guardarCategoria() {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_id'] = $_POST['tf_id'];
+        $datos['tf_codigo'] = $_POST['tf_codigo'];
         $this->model->guardarCategoria($datos);
 
         header("Location:" . URL . "categoria/verCategoria");
@@ -40,6 +47,7 @@ class Categoria extends Controllers {
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_id'] = $_POST['tf_id'];
+        $datos['tf_codigo'] = $_POST['tf_codigo'];
         $this->model->actualizarCategoria($datos);
 
         header("Location:" . URL . "categoria/verCategoria");

@@ -3,7 +3,17 @@
 //die;
 ?>
 <center>
-    <table class="table table-condensed">
+    <div class="col-xs-5">
+        <label for="tf_name" class="col-xs-12 control-label">Busqueda por nombre:</label>
+    </div>
+    <div class="col-xs-1">
+        <input type="text" class="input-xs validate[required]" name="tf_cedulaEstudiante" id="tf_cedulaEstudiante" />
+    </div>
+    <div class="col-xs-3">
+        <input type="button" class="btn-sm btn-success" id="buscarEstudianteRatificar" value="Buscar" />
+    </div>
+    <br></br>
+    <table class="table table-condensed" id="tablaRatificar">
         <tr>
             <th colspan="6" class="nombreTabla text-center">Lista de Proyectos</th>
         </tr>
@@ -33,15 +43,7 @@
             echo $value['integrantes'];
             echo '</td>';
             echo '<td>';
-            if ($value['categoria'] == "ei") {
-                echo 'Expo-Ingenieria';
-            } elseif ($value['categoria'] == "se") {
-                echo 'Semillitas';
-            } elseif ($value['categoria'] == "ej") {
-                echo 'Expo-Joven';
-            } elseif ($value['categoria'] == "fc") {
-                echo 'Feria Cientifica';
-            }
+            echo $value['categoria'];
             echo '</td>';
             echo '<td class = "text-center">';
             echo '<a class="btn-sm btn-primary" href="editarProyecto/' . $value['id'] . '">Editar</a> &nbsp&nbsp&nbsp';

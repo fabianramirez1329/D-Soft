@@ -20,6 +20,7 @@ Class Categoria_Model extends Models {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             $this->db->insert('categorias', array(
                 'id' => $datos['tf_id'],
+                'codigo' => $datos['tf_codigo'],
                 'nombre' => $datos['tf_name']));
         }
     }
@@ -33,7 +34,8 @@ Class Categoria_Model extends Models {
     public function buscarEstuRatif($ced_estudiante) {
         $resultado = $this->db->select("SELECT * "
                 . "FROM categorias "
-                . "WHERE nombre = '" . $ced_estudiante . "'");
+                . "WHERE nombre LIKE '%" . $ced_estudiante . "%'");
+        echo json_encode($resultado);
     }
 
     public function DatosCategoria($id) {
@@ -59,6 +61,7 @@ Class Categoria_Model extends Models {
             //Si ya existe, realizare un update
             $posData = array(
                 'id' => $datos['tf_id'],
+                'codigo' => $datos['tf_codigo'],
                 'nombre' => $datos['tf_name']);
 
             $this->db->update('categorias', $posData, "`id` = '{$datos['tf_id']}'");

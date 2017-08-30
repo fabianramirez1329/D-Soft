@@ -9,7 +9,7 @@ Class Pregunta_Model extends Models {
     public function guardarPregunta($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPregunta = $this->db->select("SELECT * FROM preguntas "
-                . "WHERE id = '" . $datos['tf_id'] . "' ");
+                . "WHERE id = '" . $id . "' ");
 
         if ($consultaExistenciaPregunta != null) {
             //Si ya existe, realizare un update
@@ -22,7 +22,7 @@ Class Pregunta_Model extends Models {
 
             $this->db->insert('preguntas', array(
                 'descripcion' => $datos['tf_descripcion'],
-                'codigo' => $datos['cmb_categoria'],
+                'codigo' => $datos['tf_categoria'],
                 'categoria' => $datos['tf_categoria'],
                 'idIdentificador' => $datos['tf_identificador'],
                 'valorPregunta' => $datos['tf_valorPregunta']));
@@ -34,16 +34,29 @@ Class Pregunta_Model extends Models {
         $consultaListaPregunta = $this->db->select("SELECT * FROM preguntas ");
         return $consultaListaPregunta;
     }
+
     public function ListaIdentificador() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
         return $consultaListaIdentificador;
     }
 
+    public function ListaCategoria() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaCategoria = $this->db->select("SELECT * FROM categorias ");
+        return $consultaListaCategoria;
+    }
+
     public function consultaIdentificadores() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
         return $consultaListaIdentificador;
+    }
+
+    public function consultaCategorias() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaCategoria = $this->db->select("SELECT * FROM categorias ");
+        return $consultaListaCategoria;
     }
 
     public function datosPregunta($id) {
