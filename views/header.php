@@ -72,16 +72,17 @@
                                     </li>
                                     <?php if (Session::get('tipoUsuario') <= 2) { ?>
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyectos <span class="caret"></span></a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyecto <span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <?php if (Session::get('tipoUsuario') == 2) { ?>
-                                                <li><a href="<?php echo URL; ?>proyecto_Cliente/verProyecto_Cliente">Ver Proyectos</a></li>
-                                                <?php } ?>
-                                                
-                                                <?php if (Session::get('tipoUsuario') <= 1) { ?>
-                                                       <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyectos</a></li>
+                                                <?php if (Session::get('tipoUsuario')<= 1) { ?>
                                                     <li><a href="<?php echo URL; ?>proyecto/agregarProyecto">Agregar Proyecto</a></li>
-                                                <?php } if (Session::get('tipoUsuario') <= 2) { ?>
+                                                    <li><a href="<?php echo URL; ?>proyecto/verProyecto">Ver Proyecto</a></li>
+                                                <?php } if (Session::get('tipoUsuario') <= 1) { ?>
+
+                                                <?php } ?>
+                                                <?php if (Session::get('tipoUsuario') == 2) { ?>
+                                                    <li><a href="<?php echo URL; ?>proyecto_Cliente/verProyecto_Cliente">Ver Proyectos</a></li>
+                                                    <li><a href="<?php echo URL; ?>proyecto_Cliente/calificarProyecto">Calificar Proyectos</a></li>
                                                 <?php } ?>
                                             </ul>
                                         </li>
@@ -102,6 +103,23 @@
                                             </ul>
                                         </li>
                                     <?php } ?>
+                                    <?php if (Session::get('tipoUsuario') == 1) { ?>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administradores <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <?php if (Session::get('tipoUsuario') == 1) { ?>
+                                                    <li><a href="<?php echo URL; ?>administrador/agregarAdministrador">Agregar Administrador</a></li>
+                                                    <li><a href="<?php echo URL; ?>administrador/verAdministrador">Ver Administrador</a></li>
+                                                <?php } if (Session::get('tipoUsuario') <= 3) { ?>
+
+                                                <?php } ?>
+                                                <?php if (Session::get('tipoUsuario') <= 2) { ?>
+
+                                                <?php } ?>
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+
                                     <li class="dropdown">
                                         <?php if (Session::get('tipoUsuario') <= 1) { ?>
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Identificador <span class="caret"></span></a>
@@ -115,7 +133,7 @@
                                             <?php } ?>
                                         </ul>
                                     </li>
-                                      <li class="dropdown">
+                                    <li class="dropdown">
                                         <?php if (Session::get('tipoUsuario') <= 1) { ?>
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categoria <span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
@@ -128,26 +146,26 @@
                                             <?php } ?>
                                         </ul>
                                     </li>
-                                    <?php if (Session::get('tipoUsuario') == 1) { ?>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administrador <span class="caret"></span></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/ingresarPersonal">Ingresar Personal</a></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/listaEstudiantesEspecialidad">Lista de Estudiantes Matriculados</a></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/proyeccionMatricula">Proyección</a></li>
-                                                <li><a href="<?php echo URL; ?>seccion/indexConfigSecciones">Configuración Secciones</a></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/cargaEstudiantesSeccion">Carga Estudiantes-Seccion</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/index">Actualizar cédulas BD</a></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordEstu">Reiniciar contraseñas Estudaintes</a></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordDocente">Reiniciar contraseñas Docente</a></li>
-                                                <li><a href="<?php echo URL; ?>actualizarestudiantes/estudiantesVoca">Estudiantes Voca</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="<?php echo URL; ?>persona/modificarCedulaEstudiante">Modificar cédula de estudiante</a></li>
-                                                <li><a href="<?php echo URL; ?>configSistema/index">Configuración del Sistema</a></li>
-                                            </ul>
-                                        </li>
-                                    <?php } ?>
+                                    <!-- <?php if (Session::get('tipoUsuario') == 1) { ?>
+                                                 <li class="dropdown">
+                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administrador <span class="caret"></span></a>
+                                                     <ul class="dropdown-menu" role="menu">
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/ingresarPersonal">Ingresar Personal</a></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/listaEstudiantesEspecialidad">Lista de Estudiantes Matriculados</a></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/proyeccionMatricula">Proyección</a></li>
+                                                         <li><a href="<?php echo URL; ?>seccion/indexConfigSecciones">Configuración Secciones</a></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/cargaEstudiantesSeccion">Carga Estudiantes-Seccion</a></li>
+                                                         <li class="divider"></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/index">Actualizar cédulas BD</a></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordEstu">Reiniciar contraseñas Estudaintes</a></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/actuPasswordDocente">Reiniciar contraseñas Docente</a></li>
+                                                         <li><a href="<?php echo URL; ?>actualizarestudiantes/estudiantesVoca">Estudiantes Voca</a></li>
+                                                         <li class="divider"></li>
+                                                         <li><a href="<?php echo URL; ?>persona/modificarCedulaEstudiante">Modificar cédula de estudiante</a></li>
+                                                         <li><a href="<?php echo URL; ?>configSistema/index">Configuración del Sistema</a></li>
+                                                     </ul>
+                                                 </li>
+                                    <?php } ?>-->
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown">
@@ -199,13 +217,13 @@
             <div class="col-xs-8 text-center">
                 <div class="row">
                     <div class="col-xs-12">
-                            <!--<label id="datetime" size="50"></label>-->
+                        <!--<label id="datetime" size="50"></label>-->
                     </div>
                 </div>
             </div>
-           <!--  <div class="col-xs-1">
-                <img src="<?php echo URL; ?>public/img/logoctpcarrizal.png" alt="Logo CTPC" class="img-rounded pull-right img-responsive">
-            </div>-->
+            <!--  <div class="col-xs-1">
+                 <img src="<?php echo URL; ?>public/img/logoctpcarrizal.png" alt="Logo CTPC" class="img-rounded pull-right img-responsive">
+             </div>-->
             <div class="col-xs-1"></div>
         </div>
         <div class="container">

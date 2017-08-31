@@ -4,6 +4,7 @@ class Identificador extends Controllers {
 
     function __construct() {
         parent::__construct();
+         $this->view->js = array('identificador/js/jsIdentificador.js');
     }
 
     function agregarIdentificador() {
@@ -21,6 +22,9 @@ class Identificador extends Controllers {
         $this->view->render('footer');
     }
 
+        function buscarEstuRatif($ced_estudiante) {
+        $this->model->buscarEstuRatif($ced_estudiante);
+    }
     function guardarIdentificador() {
         $datos = array();
         /* echo 'Guardando Datos..';

@@ -1,6 +1,6 @@
 <?php
 
-class Juez extends Controllers {
+class Administrador extends Controllers {
 
     function __construct() {
         parent::__construct();
@@ -8,22 +8,22 @@ class Juez extends Controllers {
          Auth::nivelDeSeguridad();
     }
 
-    function agregarJuez() {
+    function agregarAdministrador() {
         $this->view->title = 'Iniciar sesión';
         $this->view->render('header');
-        $this->view->render('juez/agregarJuez');
+        $this->view->render('administrador/agregarAdministrador');
         $this->view->render('footer');
     }
 
-    function verJuez() {
-        $this->view->title = 'Vista de Jueces';
+    function verAdministrador() {
+        $this->view->title = 'Vista de Administradores';
         $this->view->render('header');
-        $this->view->ListaJueces = $this->model->ListaJueces();
-        $this->view->render('juez/verJuez');
+        $this->view->ListaAdministradores = $this->model->ListaAdministradores();
+        $this->view->render('administrador/verAdministrador');
         $this->view->render('footer');
     }
 
-    function guardarJuez() {
+    function guardarAdministrador() {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
@@ -31,35 +31,37 @@ class Juez extends Controllers {
         $datos['tf_id'] = $_POST['tf_id'];
         $datos['tf_password'] = $_POST['tf_password'];
         $datos['tf_email'] = $_POST['tf_email'];
-        $this->model->guardarJuez($datos);
+        $this->model->guardarAdministrador($datos);
         
-        header("Location:" . URL . "juez/verJuez");
+        header("Location:" . URL . "administrador/verAdministrador");
     }
-        function actualizarJuez() {
+        function actualizarAdministrador() {
         $datos = array();
         /* echo 'Guardando Datos..';
           echo '<br>Nombre: '.$_POST['tf_name'].'</br>'; */
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_id'] = $_POST['tf_id'];
         $datos['tf_email'] = $_POST['tf_email'];
-        $this->model->actualizarJuez($datos);
+        $this->model->actualizarAdministrador($datos);
         
-        header("Location:" . URL . "juez/verJuez");
+        header("Location:" . URL . "administrador/verAdministrador");
     }
+    
+   
 
-    function editarJuez($id) {
+    function editarAdministrador($id) {
         $this->view->title = 'Datos';
         $this->view->render('header');
-        $this->view->DatosJuez = $this->model->DatosJuez($id);
-        $this->view->render('juez/editarJuez');
+        $this->view->DatosAdministrador = $this->model->DatosAdministrador($id);
+        $this->view->render('administrador/editarAdministrador');
         $this->view->render('footer');
     }
-        function eliminarJuez($id) {
+        function eliminarAdministrador($id) {
             
             
         $this->view->title = 'Datos'; 
-        $this->model->eliminarJuez($id); 
-        header("Location: " . URL . "juez/verJuez"); 
+        $this->model->eliminarAdministrador($id); 
+        header("Location: " . URL . "administrador/verAdministrador"); 
 }
 
             

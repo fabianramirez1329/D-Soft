@@ -25,6 +25,18 @@ Class Proyecto_Model extends Models {
         }
     }
 
+    public function ListaPregunta() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaPregunta = $this->db->select("SELECT * FROM preguntas ");
+        return $consultaListaPregunta;
+    }
+
+    public function listaIdentificador() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
+        return $consultaListaIdentificador;
+    }
+
     public function ListaProyecto() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaListaProyecto = $this->db->select("SELECT * FROM proyecto ");

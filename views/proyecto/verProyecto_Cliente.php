@@ -3,7 +3,8 @@
 //die;
 ?>
 <center>
-    <table class="table table-condensed">
+    <br></br>
+    <table class="table table-bordered">
         <tr>
             <th colspan="6" class="nombreTabla text-center">Lista de Proyectos</th>
         </tr>
@@ -32,25 +33,12 @@
             echo $value['integrantes'];
             echo '</td>';
             echo '<td>';
-            if ($value['categoria'] == "ei") {
-                echo 'Expo-Ingenieria';
-            } elseif ($value['categoria'] == "se") {
-                echo 'Semillitas';
-            } elseif ($value['categoria'] == "ej") {
-                echo 'Expo-Joven';
-            } elseif ($value['categoria'] == "fc") {
-                echo 'Feria Cientifica';
-            }
+            echo $value['categoria'];
+       
             echo '</td>';
             echo '</tr>';
             $con++;
         }
         ?>
-        <tr>
-            <td colspan='6' class="lineaFin"></td
-        </tr>
-        <tr>
-            <td colspan='6'>Última línea</td>
-        </tr>
     </table>
 </center>

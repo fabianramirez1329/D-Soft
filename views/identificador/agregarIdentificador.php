@@ -11,19 +11,13 @@
 
                 <label for="tf_descripcion" class="col-xs-2 control-label">Descripción:</label>
                 <div class="col-xs-3">
-                    <input type="text" class="text-uppercase form-control input-xlarge"  id="tf_descripcion" name="tf_descripcion"/>
+                    <input type="text" class="form-control input-xs"  id="tf_descripcion" name="tf_descripcion"/>
                 </div>
                 <br></br>
                 <br></br>
                 <label for="tf_puntaje" class="col-xs-2 control-label">Puntaje máximo:</label>
                 <div class="col-xs-3">
-                    <input type="text" class="text-uppercase form-control input-xlarge"  id="tf_puntaje" name="tf_puntaje"/>
-                </div>
-                <br></br>
-                <br></br>
-                <label for="tf_id" class="col-xs-2 control-label">Id:</label>
-                <div class="col-xs-3">
-                    <input type="text" class="text-uppercase form-control input-xlarge"  id="tf_id" name="tf_id"/>
+                    <input type="text" class="form-control input-xs"  id="tf_puntaje" name="tf_puntaje"/>
                 </div>
                 <br></br>
                 <br></br>

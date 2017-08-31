@@ -46,6 +46,12 @@ Class Pregunta_Model extends Models {
         $consultaListaCategoria = $this->db->select("SELECT * FROM categorias ");
         return $consultaListaCategoria;
     }
+         public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM preguntas "
+                . "WHERE descripcion LIKE '%" . $ced_estudiante . "%'");
+        echo json_encode($resultado);
+    }
 
     public function consultaIdentificadores() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula

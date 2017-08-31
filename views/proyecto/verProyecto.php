@@ -13,16 +13,16 @@
         <input type="button" class="btn-sm btn-success" id="buscarEstudianteRatificar" value="Buscar" />
     </div>
     <br></br>
-    <table class="table table-condensed" id="tablaRatificar">
+    <table class="table table-bordered" id="tablaRatificar">
         <tr>
             <th colspan="6" class="nombreTabla text-center">Lista de Proyectos</th>
         </tr>
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Integrantes</th>
-            <th>Categoria</th>
+            <th class="text-center">ID</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Descripción</th>
+            <th class="text-center">Integrantes</th>
+            <th class="text-center">Categoria</th>
             <th colspan="2" class="text-center">Acción</th>
         </tr>
         <?php
@@ -30,10 +30,10 @@
         $mensaje = "'¿Desea eliminar?'";
         foreach ($this->ListaProyecto as $lista => $value) {
             echo '<tr>';
-            echo '<td>';
+            echo '<td class="text-center">';
             echo $value['id'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="text-center">';
             echo $value['nombre'];
             echo '</td>';
             echo '<td>';
@@ -42,7 +42,7 @@
             echo '<td>';
             echo $value['integrantes'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="text-center">';
             echo $value['categoria'];
             echo '</td>';
             echo '<td class = "text-center">';
@@ -53,11 +53,5 @@
             $con++;
         }
         ?>
-        <tr>
-            <td colspan='6' class="lineaFin"></td
-        </tr>
-        <tr>
-            <td colspan='6'>Última línea</td>
-        </tr>
     </table>
 </center>

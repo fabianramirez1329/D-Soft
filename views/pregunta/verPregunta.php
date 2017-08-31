@@ -3,16 +3,27 @@
 //die;
 ?>
 <center>
-    <table class="table table-condensed">
+        <div class="col-xs-5">
+        <label for="tf_name" class="col-xs-12 control-label">Busqueda por descripcion:</label>
+    </div>
+    <div class="col-xs-1">
+        <input type="text" class="input-xs validate[required]" name="tf_cedulaEstudiante" id="tf_cedulaEstudiante" />
+    </div>
+    <div class="col-xs-3">
+        <input type="button" class="btn-sm btn-success" id="buscarEstudianteRatificar" value="Buscar" />
+    </div>
+    <br></br>
+    <br></br>
+    <table class="table table-bordered" id = "tablaRatificar">
         <tr>
             <th colspan="7" class="nombreTabla text-center">Lista de Preguntas</th>
         </tr>
         <tr>
-            <th>ID</th>
-            <th>Identificador</th>
-            <th>Descripcion</th>
-            <th>Categoria</th>
-            <th>Valor Pregunta</th>
+            <th class="text-center">ID</th>
+            <th class="text-center">Identificador</th>
+            <th class="text-center">Descripcion</th>
+            <th class="text-center">Categoria</th>
+            <th class="text-center"> Valor Pregunta</th>
             <th colspan="2" class="text-center">Acción</th>
         </tr>
         <?php
@@ -42,21 +53,18 @@
             }
 
             echo '</td>';
-            echo '<td>';
+            echo '<td class="text-center">';
             echo $value['valorPregunta'];
-            echo '<td>';
-            echo '<td class = "text-center">';
-            echo '<a class="btn-sm btn-primary" href="editarPregunta/' . $value['id'] . '">Editar</a> &nbsp&nbsp&nbsp';
-            echo '<a class="btn-sm btn-warning" href="eliminarPregunta/' . $value['id'] . '" onclick="return confirm(' . $mensaje . ');"> Eliminar</a>';
             echo '</td>';
+           
+            echo '<td>';
+            echo '<a class="btn-xs btn-primary" href="editarPregunta/' . $value['id'] . '">Editar</a> <br></br>';
+            echo '<a class="btn-xs btn-warning" href="eliminarPregunta/' . $value['id'] . '" onclick="return confirm(' . $mensaje . ');"> Eliminar</a>';
+            echo '</td>';
+            
             echo '</tr>';
         }
         ?>
-        <tr>
-            <td colspan='7' class="lineaFin"></td
-        </tr>
-        <tr>
-            <td colspan='7'>Última línea</td>
-        </tr>
+       
     </table>
 </center>

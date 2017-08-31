@@ -32,6 +32,18 @@ Class Proyecto_Cliente_Model extends Models {
         $consultaListaProyecto = $this->db->select("SELECT * FROM proyecto ");
         return $consultaListaProyecto;
     }
+    
+     public function ListaPregunta() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaPregunta = $this->db->select("SELECT * FROM preguntas ". "WHERE categoria = '" . 26 . "' ");
+        return $consultaListaPregunta;
+    }
+
+    public function listaIdentificador() {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaListaIdentificador = $this->db->select("SELECT * FROM identificador ");
+        return $consultaListaIdentificador;
+    }
 
     public function DatosProyecto($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula

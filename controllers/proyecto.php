@@ -25,6 +25,8 @@ class Proyecto extends Controllers {
         $this->view->render('proyecto/verProyecto');
         $this->view->render('footer');
     }
+    
+  
 
     function buscarEstuRatif($ced_estudiante) {
         $this->model->buscarEstuRatif($ced_estudiante);

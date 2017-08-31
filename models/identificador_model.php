@@ -34,6 +34,12 @@ Class Identificador_Model extends Models {
         return $consultaListaIdentificador;
     }
 
+        public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM identificador "
+                . "WHERE Descripcion LIKE '%" . $ced_estudiante . "%'");
+        echo json_encode($resultado);
+    }
     public function datosIdentificador($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaIdentificador = $this->db->select("SELECT * FROM identificador "

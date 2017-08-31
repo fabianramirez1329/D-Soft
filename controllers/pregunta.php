@@ -4,6 +4,7 @@ class Pregunta extends Controllers {
 
     function __construct() {
         parent::__construct();
+         $this->view->js = array('pregunta/js/jsPregunta.js');
         Auth::handleLogin();
         Auth::nivelDeSeguridad();
     }
@@ -16,7 +17,9 @@ class Pregunta extends Controllers {
         $this->view->render('pregunta/agregarPregunta');
         $this->view->render('footer');
     }
-
+        function buscarEstuRatif($ced_estudiante) {
+        $this->model->buscarEstuRatif($ced_estudiante);
+    }
     function verPregunta() {
         $this->view->title = 'Vista de Preguntas';
         $this->view->render('header');

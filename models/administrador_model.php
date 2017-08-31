@@ -1,65 +1,62 @@
 <?php
 
-Class Juez_Model extends Models {
+Class Administrador_Model extends Models {
 
     public function __construct() {
         parent::__construct();
     }
 
-    public function guardarJuez($datos) {
+    public function guardarAdministrador($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
+        $consultaExistenciaAdministrador = $this->db->select("SELECT * FROM persona "
                 . "WHERE cedula = '" . $datos['tf_id'] . "' ");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaAdministrador != null) {
             //Si ya existe, realizare un update
             echo 'Error ya existe un usuario con ese mismo nombre';
             die;
         } else {
-            $tipoUsuario = 2;
+            $tipoUsuario=1;
             //Sino Inserto datos de Pre-Matricula del Estudiante
             $this->db->insert('persona', array(
                 'cedula' => $datos['tf_id'],
                 'nombre' => $datos['tf_name'],
-                'password' => Hash::create('md5', $_POST['tf_password'], HASH_PASSWORD_KEY),
+                'password' => Hash::create('md5', $_POST['tf_password'],HASH_PASSWORD_KEY),
                 'tipoUsuario' => $tipoUsuario,
                 'correo' => $datos['tf_email']));
         }
     }
 
-    public function ListaJueces() {
+    public function ListaAdministradores() {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaListaJuez = $this->db->select("SELECT * FROM persona " . "WHERE tipoUsuario = '" . 2 . "' ");
-        return $consultaListaJuez;
+        
+        $consultaListaAdministrador = $this->db->select("SELECT * FROM persona " . "WHERE tipoUsuario = '" . 1 . "' ");
+        return $consultaListaAdministrador;
+        
+        
+        
     }
 
-    public function buscarEstuRatif($ced_estudiante) {
-        $resultado = $this->db->select("SELECT * "
-                . "FROM persona "
-                . "WHERE nombre LIKE '%" . $ced_estudiante . "%'");
-        echo json_encode($resultado);
-    }
-
-    public function DatosJuez($id) {
+    public function DatosAdministrador($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
+        $consultaExistenciaAdministrador = $this->db->select("SELECT * FROM persona "
                 . "WHERE cedula = '" . $id . "' ");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaAdministrador != null) {
             //Si ya existe, realizare un update
-            return $consultaExistenciaJuez;
+            return $consultaExistenciaAdministrador;
         } else {
             echo 'Usuario no Encontrado';
             die;
         }
     }
 
-    public function actualizarJuez($datos) {
+    public function actualizarAdministrador($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
+        $consultaExistenciaAdministrador = $this->db->select("SELECT * FROM persona "
                 . "WHERE cedula = '" . $datos['tf_id'] . "' ");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaAdministrador != null) {
             //Si ya existe, realizare un update
             $posData = array(
                 'cedula' => $datos['tf_id'],
@@ -74,11 +71,11 @@ Class Juez_Model extends Models {
         }
     }
 
-    public function eliminarJuez($id) {
-        $consultaExistenciaJuez = $this->db->select("SELECT * FROM persona "
+    public function eliminarAdministrador($id) {
+        $consultaExistenciaAdministrador = $this->db->select("SELECT * FROM persona "
                 . "WHERE cedula = '" . $id . "'");
 
-        if ($consultaExistenciaJuez != null) {
+        if ($consultaExistenciaAdministrador != null) {
             $this->db->delete('persona', "cedula = '" . $id . "'");
         } else {
             echo '<h1>No se encontro persona en la BD</h1>';
@@ -90,7 +87,7 @@ Class Juez_Model extends Models {
       $consultaExistenciaEquipo = $this->db->select("SELECT * FROM persona "
       . "WHERE cedula = " .$datos['tf_id'] . " ");
 
-      if ($consultaExistenciaJuez != null) {
+      if ($consultaExistenciaAdministrador != null) {
       $this->db->delete('persona',$posData, "cedula= '{$datos['tf_id']}'");
       } else {
       echo '<h1>Lo sentimos no se encontró al usuario</h1>';
