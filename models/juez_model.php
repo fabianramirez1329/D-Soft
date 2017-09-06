@@ -21,6 +21,9 @@ Class Juez_Model extends Models {
             $this->db->insert('persona', array(
                 'cedula' => $datos['tf_id'],
                 'nombre' => $datos['tf_name'],
+                'empresa' => $datos['tf_empresa'],
+                'cargo' => $datos['tf_cargo'],
+                'numeroTelefonico' => $datos['tf_numeroTelefono'],
                 'password' => Hash::create('md5', $_POST['tf_password'], HASH_PASSWORD_KEY),
                 'tipoUsuario' => $tipoUsuario,
                 'correo' => $datos['tf_email']));
@@ -64,6 +67,9 @@ Class Juez_Model extends Models {
             $posData = array(
                 'cedula' => $datos['tf_id'],
                 'nombre' => $datos['tf_name'],
+                'empresa' => $datos['tf_empresa'],
+                'cargo' => $datos['tf_cargo'],
+                'numeroTelefonico' => $datos['tf_numeroTelefono'],
                 'correo' => $datos['tf_email']);
 
             $this->db->update('persona', $posData, "`cedula` = '{$datos['tf_id']}'");

@@ -22,7 +22,23 @@
                 <div class="col-xs-3">
                     <input type="text" class="form-control input-sm validate[required]"  id="tf_password" name="tf_password"/>
                 </div> 
+                  <br></br>
+                <label for="tf_cargo" class="col-xs-2 control-label">Cargo:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_cargo" name="tf_cargo"/>
+                </div>
                 <br></br>
+                <label for="tf_empresa" class="col-xs-2 control-label">Empresa:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_empresa" name="tf_empresa"/>
+                </div>
+                <br></br>
+                <label for="tf_numeroTelefono" class="col-xs-2 control-label">Número de teléfono:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_numeroTelefono" name="tf_numeroTelefono"/>
+                </div>
+                <br></br>
+        
                 <label for="tf_email" class="col-xs-2 control-label">Correo:</label>
                 <div class="col-xs-3">
                     <input type="text" class="form-control input-sm validate[required]"  id="tf_email" name="tf_email"/>

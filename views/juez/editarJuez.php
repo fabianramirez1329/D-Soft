@@ -7,27 +7,47 @@
     <form id="MyForm" action="<?php echo URL; ?>juez/actualizarJuez" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
             <legend class="text-center">DATOS DEL JUEZ</legend>
- 
+
             <!--L2 Nombre Estudiante (Formulario Hugo)-->
             <div class="form-group">
                 <label for="tf_name" class="col-xs-2 control-label">Nombre:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_name" name="tf_name" value="<?php echo $this->DatosJuez[0]['nombre']; ?>"/>
                 </div>
+                <br></br>
                 
                 <label for="tf_id" class="col-xs-2 control-label">Cedula:</label>
                 <div class="col-xs-2">
                     <input type="text" class="text-uppercase form-control input-sm"  id="tf_id" name="tf_id" value="<?php echo $this->DatosJuez[0]['cedula']; ?>" disabled=" "/>
                     <input type="hidden"   id="tf_id" name="tf_id" value='<?php echo $this->DatosJuez[0]['cedula']; ?>'/>
-                   
                 </div>
-                <label for="tf_email" class="col-xs-2 control-label">Correo:</label>
-                <div class="col-xs-2">
-                    <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_email" name="tf_email" value="<?php echo $this->DatosJuez[0]['correo']; ?>"/>
-                </div> 
+                <br></br>
+                
+                <label for="tf_cargo" class="col-xs-2 control-label">Cargo:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_cargo" name="tf_cargo" value="<?php echo $this->DatosJuez[0]['cargo']; ?>"/>
+                </div>
+                <br></br>
+
+                <label for="tf_empresa" class="col-xs-2 control-label">Empresa:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_empresa" name="tf_empresa" value="<?php echo $this->DatosJuez[0]['empresa']; ?>"/>
+                </div>
+                <br></br>
+                
+                <label for="tf_numeroTelefono" class="col-xs-2 control-label">Número de teléfono:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_numeroTelefono" name="tf_numeroTelefono" value="<?php echo $this->DatosJuez[0]['numeroTelefonico']; ?>"/>
+                </div>
+                <br></br>
+            </div>
+            <label for="tf_email" class="col-xs-2 control-label">Correo:</label>
+            <div class="col-xs-2">
+                <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="tf_email" name="tf_email" value="<?php echo $this->DatosJuez[0]['correo']; ?>"/>
             </div> 
-           
-           
+            </div> 
+
+
             <br><br>
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->
             <div class="form-group"> 

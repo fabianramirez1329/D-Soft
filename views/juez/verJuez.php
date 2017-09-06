@@ -22,6 +22,9 @@
             <th class="text-center" >ID</th>
             <th class="text-center">Nombre</th>
             <th class="text-center">Correo</th>
+            <th class="text-center">Empresa</th>
+            <th class="text-center">Cargo</th>
+            <th class="text-center">Número teléfonico</th>
             <th colspan="2" class="text-center">Acción</th>
         </tr>
         <?php
@@ -40,6 +43,15 @@
             echo '</td>';
             echo '<td class="text-center">';
             echo $value['correo'];
+            echo '</td>';
+                        echo '<td class="text-center">';
+            echo $value['empresa'];
+            echo '</td>';
+                        echo '<td class="text-center">';
+            echo $value['cargo'];
+            echo '</td>';
+                        echo '<td class="text-center">';
+            echo $value['numeroTelefonico'];
             echo '</td>';
             echo '<td class = "text-center">';
             echo '<a class="btn-sm btn-primary" href="editarJuez/' . $value['cedula'] . '">Editar</a> &nbsp&nbsp&nbsp';

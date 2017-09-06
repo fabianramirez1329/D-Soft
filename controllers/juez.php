@@ -8,8 +8,8 @@ class Juez extends Controllers {
         Auth::handleLogin();
         Auth::nivelDeSeguridad();
     }
-    
-     function buscarEstuRatif($ced_estudiante) {
+
+    function buscarEstuRatif($ced_estudiante) {
         $this->model->buscarEstuRatif($ced_estudiante);
     }
 
@@ -36,6 +36,9 @@ class Juez extends Controllers {
         $datos['tf_id'] = $_POST['tf_id'];
         $datos['tf_password'] = $_POST['tf_password'];
         $datos['tf_email'] = $_POST['tf_email'];
+        $datos['tf_cargo'] = $_POST['tf_cargo'];
+        $datos['tf_empresa'] = $_POST['tf_empresa'];
+        $datos['tf_numeroTelefono'] = $_POST['tf_numeroTelefono'];
         $this->model->guardarJuez($datos);
 
         header("Location:" . URL . "juez/verJuez");
@@ -48,6 +51,9 @@ class Juez extends Controllers {
         $datos['tf_name'] = $_POST['tf_name'];
         $datos['tf_id'] = $_POST['tf_id'];
         $datos['tf_email'] = $_POST['tf_email'];
+        $datos['tf_cargo'] = $_POST['tf_cargo'];
+        $datos['tf_empresa'] = $_POST['tf_empresa'];
+        $datos['tf_numeroTelefono'] = $_POST['tf_numeroTelefono'];
         $this->model->actualizarJuez($datos);
 
         header("Location:" . URL . "juez/verJuez");

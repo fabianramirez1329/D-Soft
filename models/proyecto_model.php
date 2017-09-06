@@ -22,6 +22,10 @@ Class Proyecto_Model extends Models {
                 'descripcion' => $datos['tf_descripcion'],
                 'integrantes' => $datos['tf_integrantes'],
                 'categoria' => $datos['cmb_categoria']));
+
+            $this->db->insert('integrantes', array(
+                'nombre' => $datos['tf_name'],
+                'idProyecto' => $datos['tf_descripcion']));
         }
     }
 
