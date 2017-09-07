@@ -18,14 +18,35 @@
                     <input type="text" class="form-control input-sm validate[required]"  id="tf_descripcion" name="tf_descripcion"/>
                 </div>
                 <br></br>
-                <label for="tf_integrantes" class="col-xs-2 control-label">Integrantes:</label>
+                <label for="tf_integrantes1" class="col-xs-2 control-label">Integrante 1:</label>
                 <div class="col-xs-3">
-                    <input type="text" class="form-control input-sm validate[required]"  id="tf_integrantes" name="tf_integrantes"/>
+                    <input type="text" class="form-control input-sm "  id="tf_integrantes1" name="tf_integrantes1"/>
                 </div> 
+                <br></br>
+                 <label for="tf_integrantes2" class="col-xs-2 control-label">Integrante 2:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm "  id="tf_integrantes2" name="tf_integrantes2"/>
+                </div> 
+                <br></br>
+                 <label for="tf_integrantes3" class="col-xs-2 control-label">Integrante 3:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm "  id="tf_integrantes3" name="tf_integrantes3"/>
+                </div> 
+                <br></br>
+                 <label for="tf_integrantes4" class="col-xs-2 control-label">Integrante 4:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm "  id="tf_integrantes4" name="tf_integrantes4"/>
+                </div> 
+                <br></br>
+                
+                <label for="tf_integranteLider" class="col-xs-2 control-label">Integrante lider:</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm validate[required]"  id="tf_integranteLider" name="tf_integranteLider"/>
+                </div>
                 <br></br>
                 <label for="tf_categoria" class="col-xs-2 control-label">Categoria:</label>
                 <div class="col-xs-3">
-                    <SELECT class="form-control input-sm" NAME="cmb_categoria" SIZE=1 onChange=""> 
+                    <SELECT class="form-control input-sm validate[required]" NAME="cmb_categoria" SIZE=1 onChange=""> 
                        <option value="">Seleccione</option>
                         <?php
                         foreach ($this->consultaCategorias as $value) {

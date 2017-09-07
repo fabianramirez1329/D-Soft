@@ -39,14 +39,19 @@
             echo '<td>';
             echo $value['descripcion'];
             echo '</td>';
-            echo '<td>';
-            echo $value['integrantes'];
+            echo '<td colspan="1">';
+            foreach($this->listaIntegrante as $integrante){
+                if($value['id']==$integrante['idProyecto']){
+                    echo $integrante['nombre'];
+                    echo "<br>";
+                }
+            }
             echo '</td>';
             echo '<td class="text-center">';
             echo $value['categoria'];
             echo '</td>';
             echo '<td class = "text-center">';
-            echo '<a class="btn-sm btn-primary" href="editarProyecto/' . $value['id'] . '">Editar</a> &nbsp&nbsp&nbsp';
+            echo '<a class="btn-sm btn-primary" href="editarProyecto/' . $value['id'] . '">Editar</a> <br></br>';
             echo '<a class="btn-sm btn-warning" href="eliminarProyecto/' . $value['id'] . '" onclick="return confirm(' . $mensaje . ');"> Eliminar</a>';
             echo '</td>';
             echo '</tr>';

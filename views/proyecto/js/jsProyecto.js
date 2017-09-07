@@ -1,3 +1,4 @@
+
 $(function ()
 {
     $("#buscarEstudianteRatificar").click(function (event) {
@@ -25,6 +26,9 @@ $(function ()
             }
         });
     });
+    
+    
+    
 });
 
 
